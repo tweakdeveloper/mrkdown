@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3CA0EEA2C5C64CA00891493 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA0EE92C5C64CA00891493 /* SignIn.swift */; };
 		B3D8277F2C5C562D00618E3F /* NCMDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D8277E2C5C562D00618E3F /* NCMDApp.swift */; };
 		B3D827812C5C562D00618E3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D827802C5C562D00618E3F /* ContentView.swift */; };
 		B3D827832C5C563000618E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D827822C5C563000618E3F /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* Begin PBXFileReference section */
 		B3CA0EE32C5C578A00891493 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B3CA0EE52C5C57B900891493 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B3CA0EE92C5C64CA00891493 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		B3D8277B2C5C562D00618E3F /* mrkdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mrkdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D8277E2C5C562D00618E3F /* NCMDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDApp.swift; sourceTree = "<group>"; };
 		B3D827802C5C562D00618E3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 			name = Docs;
 			sourceTree = "<group>";
 		};
+		B3CA0EE82C5C64AE00891493 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				B3CA0EE92C5C64CA00891493 /* SignIn.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		B3D827722C5C562D00618E3F = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +73,7 @@
 		B3D8277D2C5C562D00618E3F /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				B3CA0EE82C5C64AE00891493 /* SignIn */,
 				B3D8277E2C5C562D00618E3F /* NCMDApp.swift */,
 				B3D827802C5C562D00618E3F /* ContentView.swift */,
 				B3D827822C5C563000618E3F /* Assets.xcassets */,
@@ -150,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3D827812C5C562D00618E3F /* ContentView.swift in Sources */,
+				B3CA0EEA2C5C64CA00891493 /* SignIn.swift in Sources */,
 				B3D8277F2C5C562D00618E3F /* NCMDApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
