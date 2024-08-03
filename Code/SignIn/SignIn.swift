@@ -1,5 +1,5 @@
-import AuthenticationServices
+import Foundation
 
-func signIn() {
-  print("SHOULD DO SIGN IN HERE")
+func buildAuthURL() -> URL {
+  return URL(string: "https://mrkdown.slottedspoon.dev/init_auth_flow")!
 }
