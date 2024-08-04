@@ -4,7 +4,7 @@ import SwiftUI
 struct NCMDApp: App {
   var body: some Scene {
     WindowGroup {
-      SignInView()
+      CreatePostView()
     }
   }
 }
