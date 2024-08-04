@@ -2,7 +2,7 @@ import SwiftUI
 
 import AuthenticationServices
 
-struct ContentView: View {
+struct SignInView: View {
   @Environment(\.webAuthenticationSession) private var webAuthenticationSession
   
   var body: some View {
@@ -44,8 +44,8 @@ struct ContentView: View {
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SignInView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
+    SignInView()
   }
 }
