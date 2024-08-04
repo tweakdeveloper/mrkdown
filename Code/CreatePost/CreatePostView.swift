@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct CreatePostView: View {
+  @State private var post: String = "# howdy y'all"
+  
   var body: some View {
-    Text("implement editor here")
+    TextEditor(text: $post)
   }
 }
 
