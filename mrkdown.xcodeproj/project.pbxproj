@@ -61,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				B3CA0EE92C5C64CA00891493 /* SignIn.swift */,
+				B3D827802C5C562D00618E3F /* SignInView.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -88,7 +89,6 @@
 				B323D9592C5F162400EA8BDA /* CreatePost */,
 				B3CA0EE82C5C64AE00891493 /* SignIn */,
 				B3D8277E2C5C562D00618E3F /* NCMDApp.swift */,
-				B3D827802C5C562D00618E3F /* SignInView.swift */,
 				B3D827822C5C563000618E3F /* Assets.xcassets */,
 				B3D827842C5C563000618E3F /* Preview Content */,
 			);
