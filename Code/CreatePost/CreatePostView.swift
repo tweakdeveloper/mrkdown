@@ -1,10 +1,37 @@
 import SwiftUI
 
+import Markdown
+
 struct CreatePostView: View {
-  @State private var post: String = "# howdy y'all"
+  @State private var isPreviewing: Bool = false
+  @State private var postText: String = "# howdy y'all"
   
   var body: some View {
-    TextEditor(text: $post)
+    NavigationStack {
+      TextEditor(text: $postText)
+        .navigationTitle("Create a Post")
+        .sheet(isPresented: $isPreviewing) {
+          NavigationStack {
+            Text(Document(parsing: postText).debugDescription())
+              .navigationBarTitleDisplayMode(.inline)
+              .navigationTitle("Post Preview")
+              .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                  Button("Done") {
+                    isPreviewing = false
+                  }
+                }
+              }
+          }
+        }
+        .toolbar {
+          ToolbarItem(placement: .topBarTrailing) {
+            Button("Preview Post", systemImage: "eye") {
+              isPreviewing = true
+            }
+          }
+        }
+    }
   }
 }
 
