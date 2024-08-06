@@ -12,4 +12,5 @@ post in Markdown.
 ## Goals
 
 * [ ] Preview functionality
+* [ ] Ability to add media (images, etc.) to posts
 * [ ] Works with reblogs
