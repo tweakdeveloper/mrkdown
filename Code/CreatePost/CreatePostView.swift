@@ -3,8 +3,8 @@ import SwiftUI
 import Markdown
 
 struct CreatePostView: View {
-  @State private var isPreviewing: Bool = false
-  @State private var postText: String = "# howdy y'all"
+  @State private var isPreviewing = false
+  @State private var postText = "# howdy y'all"
   
   var body: some View {
     NavigationStack {
