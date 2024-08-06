@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B323D95B2C5F163B00EA8BDA /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323D95A2C5F163B00EA8BDA /* CreatePostView.swift */; };
 		B323D9622C61C9ED00EA8BDA /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = B323D9612C61C9ED00EA8BDA /* Markdown */; };
+		B323D9642C61D5A700EA8BDA /* PreviewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */; };
 		B3CA0EEA2C5C64CA00891493 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA0EE92C5C64CA00891493 /* SignIn.swift */; };
 		B3D8277F2C5C562D00618E3F /* NCMDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D8277E2C5C562D00618E3F /* NCMDApp.swift */; };
 		B3D827812C5C562D00618E3F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D827802C5C562D00618E3F /* SignInView.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		B323D95A2C5F163B00EA8BDA /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
+		B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPostView.swift; sourceTree = "<group>"; };
 		B3CA0EE32C5C578A00891493 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B3CA0EE52C5C57B900891493 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B3CA0EE92C5C64CA00891493 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				B323D95A2C5F163B00EA8BDA /* CreatePostView.swift */,
+				B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */,
 			);
 			path = CreatePost;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				B3D827812C5C562D00618E3F /* SignInView.swift in Sources */,
 				B3CA0EEA2C5C64CA00891493 /* SignIn.swift in Sources */,
 				B3D8277F2C5C562D00618E3F /* NCMDApp.swift in Sources */,
+				B323D9642C61D5A700EA8BDA /* PreviewPostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

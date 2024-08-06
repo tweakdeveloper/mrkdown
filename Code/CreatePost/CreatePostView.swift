@@ -12,16 +12,10 @@ struct CreatePostView: View {
         .navigationTitle("Create a Post")
         .sheet(isPresented: $isPreviewing) {
           NavigationStack {
-            Text(Document(parsing: postText).debugDescription())
-              .navigationBarTitleDisplayMode(.inline)
-              .navigationTitle("Post Preview")
-              .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                  Button("Done") {
-                    isPreviewing = false
-                  }
-                }
-              }
+            PreviewPostView(
+              post: Document(parsing: postText),
+              isPreviewing: $isPreviewing
+            )
           }
         }
         .toolbar {
