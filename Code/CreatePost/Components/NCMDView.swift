@@ -20,6 +20,8 @@ struct NCMDView: View, Identifiable {
       }
     case let heading as Heading:
       NCMDHeadingView(heading: heading)
+    case let paragraph as Paragraph:
+      NCMDParagraphView(paragraph: paragraph)
     default:
       Text("TODO: implement \(type(of: markdown))")
         .background(.red)

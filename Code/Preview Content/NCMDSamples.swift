@@ -8,3 +8,5 @@ let complicated = Heading(
   Emphasis(Text("all")),
   Text(" y'all")
 )
+
+let sample = Paragraph(Text("hi there"))
