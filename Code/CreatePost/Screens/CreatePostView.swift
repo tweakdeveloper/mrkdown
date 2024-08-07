@@ -1,7 +1,5 @@
 import SwiftUI
 
-import Markdown
-
 struct CreatePostView: View {
   @State private var isPreviewing = false
   @State private var postText = "# howdy y'all"
@@ -13,7 +11,7 @@ struct CreatePostView: View {
         .sheet(isPresented: $isPreviewing) {
           NavigationStack {
             PreviewPostView(
-              post: Document(parsing: postText),
+              post: postText,
               isPreviewing: $isPreviewing
             )
           }
