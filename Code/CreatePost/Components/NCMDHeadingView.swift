@@ -12,7 +12,8 @@ struct NCMDHeadingView: View {
       offsetBy: heading.level + 1
     )
     let headingTextString = String(headingString[headingTextIndex...])
-    Text(headingTextString)
+    let headingText = LocalizedStringKey(headingTextString)
+    Text(headingText)
       .font(heading.level == 1 ? .title : .title2)
   }
 }
@@ -30,6 +31,8 @@ struct NCMDHeadingView_Previews: PreviewProvider {
         .previewDisplayName("Level 1 Heading")
       NCMDHeadingView(heading: level2)
         .previewDisplayName("Level 2 Heading")
+      NCMDHeadingView(heading: complicated)
+        .previewDisplayName("Complicated Heading")
     }
     .padding()
     .previewLayout(.sizeThatFits)
