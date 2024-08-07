@@ -13,4 +13,5 @@ post in Markdown.
 
 * [ ] Preview functionality
 * [ ] Ability to add media (images, etc.) to posts
+* [ ] Queue and schedule functionality
 * [ ] Works with reblogs
