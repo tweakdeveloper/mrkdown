@@ -27,11 +27,11 @@ struct NCMDHeadingView: View {
 struct NCMDHeadingView_Previews: PreviewProvider {
   static var previews: some View {
     Group {
-      NCMDHeadingView(heading: level1)
+      NCMDHeadingView(heading: .level1)
         .previewDisplayName("Level 1 Heading")
-      NCMDHeadingView(heading: level2)
+      NCMDHeadingView(heading: .level2)
         .previewDisplayName("Level 2 Heading")
-      NCMDHeadingView(heading: complicated)
+      NCMDHeadingView(heading: .complicated)
         .previewDisplayName("Complicated Heading")
     }
     .padding()

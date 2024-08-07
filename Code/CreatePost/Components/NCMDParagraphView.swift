@@ -18,7 +18,7 @@ struct NCMDParagraphView: View {
  */
 struct NCMDParagraphView_Previews: PreviewProvider {
   static var previews: some View {
-    NCMDParagraphView(paragraph: sample)
+    NCMDParagraphView(paragraph: .sample)
       .padding()
       .previewDisplayName("Paragraph")
       .previewLayout(.sizeThatFits)
