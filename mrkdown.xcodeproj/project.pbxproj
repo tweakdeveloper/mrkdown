@@ -16,6 +16,8 @@
 		B3D827812C5C562D00618E3F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D827802C5C562D00618E3F /* SignInView.swift */; };
 		B3D827832C5C563000618E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D827822C5C563000618E3F /* Assets.xcassets */; };
 		B3D827862C5C563000618E3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D827852C5C563000618E3F /* Preview Assets.xcassets */; };
+		B3F1A18D2C63281900DE8D5B /* NCMDHeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1A18C2C63281900DE8D5B /* NCMDHeadingView.swift */; };
+		B3F1A1912C632A7D00DE8D5B /* NCMDSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1A1902C632A7D00DE8D5B /* NCMDSamples.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		B3D827802C5C562D00618E3F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		B3D827822C5C563000618E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3D827852C5C563000618E3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B3F1A18C2C63281900DE8D5B /* NCMDHeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDHeadingView.swift; sourceTree = "<group>"; };
+		B3F1A1902C632A7D00DE8D5B /* NCMDSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDSamples.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		B3D827842C5C563000618E3F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				B3F1A1902C632A7D00DE8D5B /* NCMDSamples.swift */,
 				B3D827852C5C563000618E3F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				B324563C2C631DF300AE2C72 /* NCMDView.swift */,
+				B3F1A18C2C63281900DE8D5B /* NCMDHeadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -202,8 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B323D95B2C5F163B00EA8BDA /* CreatePostView.swift in Sources */,
+				B3F1A1912C632A7D00DE8D5B /* NCMDSamples.swift in Sources */,
 				B3D827812C5C562D00618E3F /* SignInView.swift in Sources */,
 				B3CA0EEA2C5C64CA00891493 /* SignIn.swift in Sources */,
+				B3F1A18D2C63281900DE8D5B /* NCMDHeadingView.swift in Sources */,
 				B3D8277F2C5C562D00618E3F /* NCMDApp.swift in Sources */,
 				B324563D2C631DF300AE2C72 /* NCMDView.swift in Sources */,
 				B323D9642C61D5A700EA8BDA /* PreviewPostView.swift in Sources */,
