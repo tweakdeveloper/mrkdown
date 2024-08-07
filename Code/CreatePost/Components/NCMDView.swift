@@ -25,7 +25,7 @@ struct NCMDView: View, Identifiable {
   }
 }
 
-#Preview {
+#Preview("NC Markdown View") {
   NCMDView(
     markdown: Document(
       parsing: """
