@@ -8,7 +8,7 @@ struct PreviewPostView: View {
   @Binding var isPreviewing: Bool
   
   var body: some View {
-    Text(post.debugDescription())
+    NCMDView(markdown: post)
       .navigationBarTitleDisplayMode(.inline)
       .navigationTitle("Post Preview")
       .toolbar {
