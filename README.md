@@ -12,6 +12,10 @@ post in Markdown.
 ## Goals
 
 * [ ] Preview functionality
+  * [x] Headings
+  * [x] Formatted text
+  * [ ] Links
+  * [ ] Images
 * [ ] Ability to add media (images, etc.) to posts
 * [ ] Queue and schedule functionality
 * [ ] Works with reblogs
