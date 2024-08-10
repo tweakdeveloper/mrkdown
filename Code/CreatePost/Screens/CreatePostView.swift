@@ -17,9 +17,12 @@ struct CreatePostView: View {
           }
         }
         .toolbar {
-          ToolbarItem(placement: .topBarTrailing) {
+          ToolbarItemGroup(placement: .topBarTrailing) {
             Button("Preview Post", systemImage: "eye") {
               isPreviewing = true
+            }
+            Button("Submit Post", systemImage: "paperplane") {
+              print("should submit post")
             }
           }
         }
