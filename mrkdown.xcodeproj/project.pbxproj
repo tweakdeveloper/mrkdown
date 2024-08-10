@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B323D95B2C5F163B00EA8BDA /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323D95A2C5F163B00EA8BDA /* CreatePostView.swift */; };
+		B323D95B2C5F163B00EA8BDA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323D95A2C5F163B00EA8BDA /* MainView.swift */; };
 		B323D9622C61C9ED00EA8BDA /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = B323D9612C61C9ED00EA8BDA /* Markdown */; };
 		B323D9642C61D5A700EA8BDA /* PreviewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */; };
 		B324563D2C631DF300AE2C72 /* NCMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B324563C2C631DF300AE2C72 /* NCMDView.swift */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B323D95A2C5F163B00EA8BDA /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
+		B323D95A2C5F163B00EA8BDA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPostView.swift; sourceTree = "<group>"; };
 		B324563C2C631DF300AE2C72 /* NCMDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDView.swift; sourceTree = "<group>"; };
 		B3CA0EE32C5C578A00891493 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -50,29 +50,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B323D9592C5F162400EA8BDA /* CreatePost */ = {
-			isa = PBXGroup;
-			children = (
-				B3F1A18A2C63278400DE8D5B /* Screens */,
-				B3F1A18B2C63279300DE8D5B /* Components */,
-			);
-			path = CreatePost;
-			sourceTree = "<group>";
-		};
 		B3B9C08F2C6700BB0069FD9E /* Logic */ = {
 			isa = PBXGroup;
 			children = (
 				B3CA0EE92C5C64CA00891493 /* SignIn.swift */,
 			);
 			path = Logic;
-			sourceTree = "<group>";
-		};
-		B3B9C0902C6700CA0069FD9E /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				B3D827802C5C562D00618E3F /* SignInView.swift */,
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 		B3CA0EE72C5C586700891493 /* Docs */ = {
@@ -82,15 +65,6 @@
 				B3CA0EE32C5C578A00891493 /* LICENSE */,
 			);
 			name = Docs;
-			sourceTree = "<group>";
-		};
-		B3CA0EE82C5C64AE00891493 /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				B3B9C0902C6700CA0069FD9E /* Screens */,
-				B3B9C08F2C6700BB0069FD9E /* Logic */,
-			);
-			path = SignIn;
 			sourceTree = "<group>";
 		};
 		B3D827722C5C562D00618E3F = {
@@ -113,8 +87,9 @@
 		B3D8277D2C5C562D00618E3F /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				B323D9592C5F162400EA8BDA /* CreatePost */,
-				B3CA0EE82C5C64AE00891493 /* SignIn */,
+				B3F1A18B2C63279300DE8D5B /* Components */,
+				B3B9C08F2C6700BB0069FD9E /* Logic */,
+				B3F1A18A2C63278400DE8D5B /* Screens */,
 				B3D8277E2C5C562D00618E3F /* NCMDApp.swift */,
 				B3D827822C5C563000618E3F /* Assets.xcassets */,
 				B3D827842C5C563000618E3F /* Preview Content */,
@@ -134,8 +109,9 @@
 		B3F1A18A2C63278400DE8D5B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B323D95A2C5F163B00EA8BDA /* CreatePostView.swift */,
+				B323D95A2C5F163B00EA8BDA /* MainView.swift */,
 				B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */,
+				B3D827802C5C562D00618E3F /* SignInView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -228,7 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B323D95B2C5F163B00EA8BDA /* CreatePostView.swift in Sources */,
+				B323D95B2C5F163B00EA8BDA /* MainView.swift in Sources */,
 				B3F1A1912C632A7D00DE8D5B /* NCMDSamples.swift in Sources */,
 				B3D827812C5C562D00618E3F /* SignInView.swift in Sources */,
 				B3CA0EEA2C5C64CA00891493 /* SignIn.swift in Sources */,

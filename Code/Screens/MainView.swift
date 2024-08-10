@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CreatePostView: View {
+struct MainView: View {
   @State private var hasBeenPreviewed = false
   @State private var isPreviewing = false
   @State private var postText = "# howdy y'all"
@@ -61,5 +61,5 @@ struct CreatePostView: View {
 }
 
 #Preview {
-  CreatePostView()
+  MainView()
 }
