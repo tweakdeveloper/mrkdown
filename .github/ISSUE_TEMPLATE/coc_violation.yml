@@ -1,0 +1,79 @@
+name: Code of Conduct Violation Report
+description: Let me know about a Code of Conduct violation.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form is intended for creating issues related to potential
+        [Code of Conduct](CODE_OF_CONDUCT.md) violations. If this is something
+        you've experienced, I'm sorry that this has happened to you. I do my
+        best to ensure that this project is safe and comfortable for all
+        involved. While I understand that this form may be daunting, please do
+        your best to complete it in its entirety so that I can best help you.
+  - type: input
+    attributes:
+      label: User committing the violation
+      description: |
+        This needs to be their GitHub username. If you're unsure, "unknown" is
+        fine for now. Please note that this can, and most likely will, be
+        different from their Tumblr blog handle.
+      placeholder: "Example: @tweakdeveloper"
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Nature of the violation
+      description: |
+        These options are taken from the list of unacceptable behaviors in the
+        [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/)
+        and may not be inclusive of all violations. More than one can be
+        selected.
+      options:
+        - label: Violence or Threats of Violence
+        - label: Personal Attacks
+        - label: Derogatory Language
+        - label: Unwelcome Sexual Attention or Physical Contact
+        - label: Disruptive Behavior
+        - label: Influencing Unacceptable Behavior
+        - label: Other
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Where the violation occurred
+      options:
+        - On GitHub
+        - On Tumblr
+        - On both GitHub and Tumblr
+        - Off-platform (neither GitHub nor Tumblr)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Any additional information
+      description: |
+        If you're comfortable, please provide a brief description of what
+        happened as well as any other relevant details that could help us
+        determine the best course of action going forward.
+  - type: checkboxes
+    attributes:
+      label: Attestation against false reporting
+      description: |
+        By checking this box, you state that you are aware that, in compliance
+        with the Mozilla guidelines, false reporters may be subject to the same
+        consequences as other violators of the guidelines. Please note that
+        this is in no way intended to discourage you from filing any report of
+        a violation that actually occurred.
+      options:
+        - label: I agree
+          required: true
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a potential violation. I'll
+        work through this issue with you as soon as possible.
+assignees: ["@tweakdeveloper"]
+labels: ["CoC violation"]
+title: ["[CoC violation]"]
