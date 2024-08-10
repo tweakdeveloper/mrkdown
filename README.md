@@ -21,3 +21,15 @@ post in Markdown.
 * [ ] Works with reblogs
 * [ ] Syntax highlighting in editor view
 * [ ] Report bugs in-app that open GitHub issues
+
+## Contributing
+
+I'm happy to have you join me in creating mrkdown! Please reference
+[my contribution guidelines](CONTRIBUTING.md), and if anything is unclear,
+don't hesitate to
+[open an issue](https://github.com/tweakdeveloper/mrkdown/issues/new/choose).
+
+### Code of Conduct
+
+All contributors are expected to comply with the
+[mrkdown Code of Conduct](CODE_OF_CONDUCT.md).
