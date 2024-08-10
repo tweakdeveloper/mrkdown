@@ -12,8 +12,6 @@ not a Mozilla project, the reporting process will differ.
 
 ## Reporting
 
-Violations can be reported using a GitHub issue. A template will be created for
-this purpose in the future, at which point this document will be updated with a
-direct link to the issue template. For now, should any issues arise, please
-feel free to create a freeform issue with the prefix `[CoC violation]` in the
-issue title.
+Violations can be reported using a
+[GitHub issue](https://github.com/tweakdeveloper/mrkdown/issues/new/choose).
+Please use the "Code of Conduct Violation Report" to create a report.
