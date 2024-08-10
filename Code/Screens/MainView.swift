@@ -12,7 +12,7 @@ struct MainView: View {
         ) {
           Button("No", role: .cancel, action: model.showPreview)
           Button("Yes", role: .destructive) {
-            print("should submit post anyway")
+            model.submitPost(shouldOverrideConfirmation: true)
           }
         } message: {
           Text(

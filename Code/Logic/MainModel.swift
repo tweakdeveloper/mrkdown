@@ -27,10 +27,14 @@ class MainModel: ObservableObject {
   }
 
   func submitPost() {
-    if !hasBeenPreviewed {
-      shouldShowSubmitConfirmation = true
-    } else {
+    submitPost(shouldOverrideConfirmation: false)
+  }
+
+  func submitPost(shouldOverrideConfirmation: Bool) {
+    if shouldOverrideConfirmation || hasBeenPreviewed {
       print("should submit post")
+    } else {
+      shouldShowSubmitConfirmation = true
     }
   }
 }
