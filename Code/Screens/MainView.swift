@@ -3,9 +3,6 @@ import SwiftUI
 struct MainView: View {
   @EnvironmentObject var model: MainModel
 
-  @State private var shouldLogUserIn = false
-  @State private var shouldShowSubmitConfirmation = false
-
   var body: some View {
     NavigationStack {
       TextEditor(text: $model.postText)
