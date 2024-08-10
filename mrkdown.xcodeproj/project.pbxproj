@@ -12,6 +12,7 @@
 		B323D9642C61D5A700EA8BDA /* PreviewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */; };
 		B324563D2C631DF300AE2C72 /* NCMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B324563C2C631DF300AE2C72 /* NCMDView.swift */; };
 		B3B9C0A02C6725B50069FD9E /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9C09F2C6725B50069FD9E /* MainModel.swift */; };
+		B3B9C0A42C6741760069FD9E /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = B3B9C0A32C6741750069FD9E /* CONTRIBUTING.md */; };
 		B3CA0EEA2C5C64CA00891493 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA0EE92C5C64CA00891493 /* SignIn.swift */; };
 		B3D8277F2C5C562D00618E3F /* NCMDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D8277E2C5C562D00618E3F /* NCMDApp.swift */; };
 		B3D827812C5C562D00618E3F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D827802C5C562D00618E3F /* SignInView.swift */; };
@@ -28,6 +29,7 @@
 		B324563C2C631DF300AE2C72 /* NCMDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDView.swift; sourceTree = "<group>"; };
 		B3B9C09F2C6725B50069FD9E /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		B3B9C0A22C6740BF0069FD9E /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
+		B3B9C0A32C6741750069FD9E /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		B3CA0EE32C5C578A00891493 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B3CA0EE52C5C57B900891493 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B3CA0EE92C5C64CA00891493 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			children = (
 				B3CA0EE52C5C57B900891493 /* README.md */,
 				B3B9C0A22C6740BF0069FD9E /* CODE_OF_CONDUCT.md */,
+				B3B9C0A32C6741750069FD9E /* CONTRIBUTING.md */,
 				B3CA0EE32C5C578A00891493 /* LICENSE */,
 			);
 			name = Docs;
@@ -197,6 +200,7 @@
 			files = (
 				B3D827862C5C563000618E3F /* Preview Assets.xcassets in Resources */,
 				B3D827832C5C563000618E3F /* Assets.xcassets in Resources */,
+				B3B9C0A42C6741760069FD9E /* CONTRIBUTING.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
