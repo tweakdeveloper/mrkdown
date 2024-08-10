@@ -1,5 +1,9 @@
 name: Code of Conduct Violation Report
 description: Let me know about a Code of Conduct violation.
+title: "[CoC violation]: "
+labels: ["CoC violation"]
+assignees:
+  - tweakdeveloper
 body:
   - type: markdown
     attributes:
@@ -74,6 +78,3 @@ body:
       value: |
         Thank you for taking the time to report a potential violation. I'll
         work through this issue with you as soon as possible.
-assignees: ["@tweakdeveloper"]
-labels: ["CoC violation"]
-title: ["[CoC violation]"]
