@@ -1,6 +1,6 @@
 name: ensure-linted
 run-name: Ensure SwiftLint Compliance
-on: [push]
+on: [pull_request]
 jobs:
   ensure-linted:
     name: Run Linter
