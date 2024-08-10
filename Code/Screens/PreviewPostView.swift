@@ -3,9 +3,9 @@ import SwiftUI
 import Markdown
 
 struct PreviewPostView: View {
-  let post: String
+  @EnvironmentObject var model: MainModel
 
-  @Binding var isPreviewing: Bool
+  let post: String
 
   var body: some View {
     NCMDView(markdown: Document(parsing: post))
@@ -13,9 +13,7 @@ struct PreviewPostView: View {
       .navigationTitle("Post Preview")
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
-          Button("Done") {
-            isPreviewing = false
-          }
+          Button("Done", action: model.hidePreview)
         }
       }
   }
@@ -28,8 +26,8 @@ struct PreviewPostView: View {
 # howdy y'all
 
 what's goin' on?
-""",
-      isPreviewing: Binding.constant(true)
+"""
     )
+    .environmentObject(MainModel())
   }
 }

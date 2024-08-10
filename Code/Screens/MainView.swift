@@ -1,26 +1,19 @@
 import SwiftUI
 
 struct MainView: View {
-  @State private var hasBeenPreviewed = false
-  @State private var isPreviewing = false
-  @State private var postText = "# howdy y'all"
-  @State private var shouldShowSubmitConfirmation = false
+  @EnvironmentObject var model: MainModel
 
-  private func showPreview() {
-    isPreviewing = true
-    hasBeenPreviewed = true
-  }
+  @State private var shouldLogUserIn = false
+  @State private var shouldShowSubmitConfirmation = false
 
   var body: some View {
     NavigationStack {
-      TextEditor(text: $postText)
+      TextEditor(text: $model.postText)
         .alert(
           Text("Submit post without previewing?"),
-          isPresented: $shouldShowSubmitConfirmation
+          isPresented: $model.shouldShowSubmitConfirmation
         ) {
-          Button("No", role: .cancel) {
-            showPreview()
-          }
+          Button("No", role: .cancel, action: model.showPreview)
           Button("Yes", role: .destructive) {
             print("should submit post anyway")
           }
@@ -31,29 +24,26 @@ struct MainView: View {
           )
         }
         .navigationTitle("Create a Post")
-        .onChange(of: postText) { _ in
-          hasBeenPreviewed = false
-        }
-        .sheet(isPresented: $isPreviewing) {
+        .sheet(isPresented: $model.isPreviewing) {
           NavigationStack {
-            PreviewPostView(
-              post: postText,
-              isPreviewing: $isPreviewing
-            )
+            PreviewPostView(post: model.postText)
           }
+        }
+        .sheet(isPresented: $model.shouldLogUserIn) {
+          SignInView()
         }
         .toolbar {
           ToolbarItemGroup(placement: .topBarTrailing) {
-            Button("Preview Post", systemImage: "doc") {
-              showPreview()
-            }
-            Button("Submit Post", systemImage: "paperplane") {
-              if !hasBeenPreviewed {
-                shouldShowSubmitConfirmation = true
-              } else {
-                print("should submit post")
-              }
-            }
+            Button(
+              "Preview Post",
+              systemImage: "doc",
+              action: model.showPreview
+            )
+            Button(
+              "Submit Post",
+              systemImage: "paperplane",
+              action: model.submitPost
+            )
           }
         }
     }
@@ -62,4 +52,5 @@ struct MainView: View {
 
 #Preview {
   MainView()
+    .environmentObject(MainModel())
 }
