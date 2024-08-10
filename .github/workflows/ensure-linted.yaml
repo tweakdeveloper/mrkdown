@@ -1,0 +1,16 @@
+name: ensure-linted
+run-name: Ensure SwiftLint Compliance
+on: [push]
+jobs:
+  ensure-linted:
+    name: Run Linter
+    runs-on: macos-latest
+    steps:
+      - name: Install Mint
+        run: |
+          brew update
+          brew install mint
+      - name: Checkout mrkdown
+        uses: actions/checkout@v4
+      - name: Run SwiftLint
+        run: mint run realm/SwiftLint@0.56.1
