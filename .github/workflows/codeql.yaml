@@ -1,0 +1,33 @@
+name: CodeQL
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "**/*.md"
+  schedule:
+    - cron: "0 14 * * 1"
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Checkout mrkdown
+        uses: actions/checkout@v4
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: swift
+          build-mode: manual
+      - name: Perform Build
+        shell: bash
+        run: |
+          xcodebuild -workspace mrkdown.xcodeproj/project.xcworkspace \
+            -target mrkdown CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:swift"
