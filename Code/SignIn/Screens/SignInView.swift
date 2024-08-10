@@ -4,7 +4,7 @@ import AuthenticationServices
 
 struct SignInView: View {
   @Environment(\.webAuthenticationSession) private var webAuthenticationSession
-  
+
   var body: some View {
     Button("sign in to tumblr") {
       Task {
@@ -29,7 +29,7 @@ struct SignInView: View {
             return
           }
           let receivedState = urlComponents.queryItems?[stateParamIndex].value
-          if(receivedState == state) {
+          if receivedState == state {
             print("login succeeded")
           } else {
             throw SignInError.stateDidNotMatch(receivedState ?? "unknown")

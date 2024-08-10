@@ -164,6 +164,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B3B9C09C2C671C090069FD9E /* PBXTargetDependency */,
 			);
 			name = mrkdown;
 			packageProductDependencies = (
@@ -199,6 +200,7 @@
 			mainGroup = B3D827722C5C562D00618E3F;
 			packageReferences = (
 				B323D9602C61C9ED00EA8BDA /* XCRemoteSwiftPackageReference "swift-markdown" */,
+				B3B9C09A2C671B6E0069FD9E /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = B3D8277C2C5C562D00618E3F /* Products */;
 			projectDirPath = "";
@@ -239,6 +241,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3B9C09C2C671C090069FD9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = B3B9C09B2C671C090069FD9E /* SwiftLintBuildToolPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B3D827872C5C563000618E3F /* Debug */ = {
@@ -449,6 +458,14 @@
 				version = 0.4.0;
 			};
 		};
+		B3B9C09A2C671B6E0069FD9E /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = exactVersion;
+				version = 0.56.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -456,6 +473,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B323D9602C61C9ED00EA8BDA /* XCRemoteSwiftPackageReference "swift-markdown" */;
 			productName = Markdown;
+		};
+		B3B9C09B2C671C090069FD9E /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3B9C09A2C671B6E0069FD9E /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -4,9 +4,9 @@ import Markdown
 
 struct PreviewPostView: View {
   let post: String
-  
+
   @Binding var isPreviewing: Bool
-  
+
   var body: some View {
     NCMDView(markdown: Document(parsing: post))
       .navigationBarTitleDisplayMode(.inline)

@@ -4,7 +4,7 @@ import Markdown
 
 struct NCMDHeadingView: View {
   let heading: Heading
-  
+
   var body: some View {
     let headingString = heading.format()
     let headingTextIndex = headingString.index(

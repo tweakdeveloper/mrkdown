@@ -4,7 +4,7 @@ import Markdown
 
 struct NCMDParagraphView: View {
   let paragraph: Paragraph
-  
+
   var body: some View {
     Text(LocalizedStringKey(paragraph.format()))
   }

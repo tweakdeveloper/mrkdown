@@ -8,7 +8,7 @@ struct NCMDView: View, Identifiable {
   let markdown: Markup
 
   var body: some View {
-    switch(markdown) {
+    switch markdown {
     case is Document:
       let markupChildren = markdown.children.map { markupChild in
         NCMDView(markdown: markupChild)
