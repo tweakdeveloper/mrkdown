@@ -16,8 +16,59 @@ any bugs or other issues you may be encountering.
 
 ## Creating Pull Requests
 
-This repository uses the @realm/SwiftLint project as a pre-commit hook. Please
-ensure that your work does not raise any errors or warnings when the hook runs.
+### Code Style
 
-Additionally, this is an open-source project. By contributing code, it will be
-licensed under the terms of [the MIT license](LICENSE).
+This repository uses the @realm/SwiftLint project as a pre-commit hook on my
+machine. It would be appreciated if you would follow the same setup after you
+clone the repository if you're interested in contributing to mrkdown by opening
+a pull request. Instructions are available in
+[SwiftLint's README](https://github.com/realm/SwiftLint#git-pre-commit-hook).
+Please ensure that your work does not raise any errors or warnings when the
+hook runs.
+
+I like two-space indents using spaces, not tabs.
+
+Additionally, as a personal preference, I'm not a fan of the default comments
+that Xcode inserts when creating a file. Please remove those; the top-level
+import (usually `Foundation` or `SwiftUI`) should be the first line.
+
+After the top-level import, the next line should be a blank line, followed by
+any other first-party (Apple) imports, sorted alphabetically. Then another
+blank line. Next come any third-party library imports (again sorted
+alphabetically).
+
+#### A simple example
+
+```swift
+import Foundation
+
+extension Bool {
+  ...
+}
+```
+
+#### A more complicated example
+
+```swift
+import SwiftUI
+
+import Markdown
+
+struct SampleView: View {
+  ...
+}
+```
+
+### Compatibility
+
+The current deployment target for mrkdown is iOS 16.4. I'm willing to bump the
+deployment target to iOS 16.6. I am not willing to bump it to iOS 17 at this
+time. The primary motivation for this is maintaining iPhone 8 support. If it is
+necessary to implement a compelling feature, I am open to changing this stance.
+I do not consider avoiding the use of `#available` to get around a deprecated
+function to be "compelling".
+
+### Licensing
+
+This is an open-source project. By contributing code, it will be licensed under
+the terms of [the MIT license](LICENSE).
