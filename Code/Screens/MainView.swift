@@ -30,12 +30,17 @@ struct MainView: View {
           SignInView()
         }
         .toolbar {
-          ToolbarItemGroup(placement: .topBarTrailing) {
+          ToolbarItemGroup(placement: .bottomBar) {
+            Spacer()
             Button(
               "Preview Post",
               systemImage: "doc",
               action: model.showPreview
             )
+          }
+          ToolbarItemGroup(placement: .topBarTrailing) {
+            Menu("More Options", systemImage: "ellipsis.rectangle") {
+            }
             Button(
               "Submit Post",
               systemImage: "paperplane",
