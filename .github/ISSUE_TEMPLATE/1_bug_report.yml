@@ -1,0 +1,66 @@
+name: Bug Report
+description: Let me know about a bug you're experiencing.
+title: "[Bug]: "
+labels: ["bug"]
+assignees:
+  - tweakdeveloper
+body:
+  - type: markdown
+    attributes:
+      value: >
+        I'm really sorry you're experiencing an issue with mrkdown. Please fill
+        out the form below and I'll start working towards a fix for you. This
+        may involve reaching out to you via a comment on this issue for more
+        information, so please be sure to monitor your email for a notification
+        or check GitHub to see that I've replied.
+  - type: input
+    attributes:
+      label: Device
+      description: Which device do you use mrkdown on?
+      placeholder: "Example: iPhone 12"
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: iOS version
+      description: What version of iOS/iPadOS is your device running?
+      options:
+        - iOS 18.0
+        - iOS 17.6
+        - iOS 17.5
+        - iOS 17.4
+        - iOS 17.3
+        - iOS 17.2
+        - iOS 17.1
+        - iOS 17.0
+        - iOS 16.7
+        - iOS 16.6
+        - iOS 16.5
+        - iOS 16.4
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Bug Category
+      description: Which of these categories most closely describes your issue?
+      options:
+        - User Interface
+        - Accessibility
+        - Functionality
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Bug Description
+      description: |
+        What are some of the specifics of the issue you're running into?
+      placeholder: >
+        Example: mrkdown fails to update the preview after I change the
+        Markdown text in the editor.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: >
+        Thank you for taking the time to submit this report. mrkdown couldn't
+        exist or become better without you.
