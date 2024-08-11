@@ -40,6 +40,11 @@ struct MainView: View {
           }
           ToolbarItemGroup(placement: .topBarTrailing) {
             Menu("More Options", systemImage: "ellipsis.rectangle") {
+              NavigationLink {
+                AboutView()
+              } label: {
+                Label("About mrkdown", systemImage: "info")
+              }
             }
             Button(
               "Submit Post",
