@@ -62,7 +62,7 @@ struct SampleView: View {
 ### Compatibility
 
 The current deployment target for mrkdown is iOS 16.4. I'm willing to bump the
-deployment target to iOS 16.6. I am not willing to bump it to iOS 17 at this
+deployment target to iOS 16.7. I am not willing to bump it to iOS 17 at this
 time. The primary motivation for this is maintaining iPhone 8 support. If it is
 necessary to implement a compelling feature, I am open to changing this stance.
 I do not consider avoiding the use of `#available` to get around a deprecated
