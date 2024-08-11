@@ -12,9 +12,13 @@ class MainModel: ObservableObject {
   private var postTextSubscriptionCancellable: Cancellable?
 
   init() {
-    postTextSubscriptionCancellable = $postText.sink { _ in
-      self.hasBeenPreviewed = false
+    postTextSubscriptionCancellable = $postText.sink { [weak self] _ in
+      self?.hasBeenPreviewed = false
     }
+  }
+
+  deinit {
+    postTextSubscriptionCancellable = nil
   }
 
   func hidePreview() {
