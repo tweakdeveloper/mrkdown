@@ -19,6 +19,7 @@ post in Markdown.
 * [ ] Ability to add media (images, etc.) to posts
 * [ ] Queue and schedule functionality
 * [ ] Works with reblogs
+  * [ ] Possible share extension from the Tumblr app
 * [ ] Syntax highlighting in editor view
 * [ ] Report bugs in-app that open GitHub issues
 * [ ] iPad layout
