@@ -21,6 +21,8 @@ post in Markdown.
 * [ ] Works with reblogs
 * [ ] Syntax highlighting in editor view
 * [ ] Report bugs in-app that open GitHub issues
+* [ ] iPad layout
+  * [ ] Potential Mac Catalyst support
 
 ## Compatibility
 
