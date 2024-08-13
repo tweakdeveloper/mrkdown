@@ -3,6 +3,8 @@ import SwiftUI
 struct MainView: View {
   @EnvironmentObject var model: MainModel
 
+  @FocusState private var editorIsFocused
+
   var body: some View {
     NavigationStack {
       TextEditor(text: $model.postText)
@@ -20,6 +22,7 @@ struct MainView: View {
             "post. Are you sure you want to submit the post?"
           )
         }
+        .focused($editorIsFocused)
         .navigationTitle("Create a Post")
         .sheet(isPresented: $model.isPreviewing) {
           NavigationStack {
@@ -37,6 +40,12 @@ struct MainView: View {
               systemImage: "doc",
               action: model.showPreview
             )
+          }
+          ToolbarItemGroup(placement: .keyboard) {
+            Spacer()
+            Button("Done") {
+              editorIsFocused = false
+            }
           }
           ToolbarItemGroup(placement: .topBarTrailing) {
             Menu("More Options", systemImage: "ellipsis.rectangle") {
