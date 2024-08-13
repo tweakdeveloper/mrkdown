@@ -43,9 +43,21 @@ struct MainView: View {
             )
           }
           ToolbarItemGroup(placement: .keyboard) {
-            Spacer()
-            Button("Done") {
-              editorIsFocused = false
+            ZStack {
+              HStack {
+                Button("Add Bold", systemImage: "bold") {
+                }
+                Button("Add Italics", systemImage: "italic") {
+                }
+                Button("Add Underline", systemImage: "underline") {
+                }
+              }
+              HStack {
+                Spacer()
+                Button("Done") {
+                  editorIsFocused = false
+                }
+              }
             }
           }
           ToolbarItemGroup(placement: .topBarTrailing) {
