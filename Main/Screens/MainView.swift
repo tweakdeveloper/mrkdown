@@ -24,6 +24,7 @@ struct MainView: View {
         }
         .focused($editorIsFocused)
         .navigationTitle("Create a Post")
+        .padding(.horizontal)
         .sheet(isPresented: $model.isPreviewing) {
           NavigationStack {
             PreviewPostView(post: model.postText)
