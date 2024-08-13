@@ -7,13 +7,15 @@ struct NCMDView: View, Identifiable {
 
   let markdown: Markup
 
+  @ScaledMetric var childSpacing = 10
+
   var body: some View {
     switch markdown {
     case is Document:
       let markupChildren = markdown.children.map { markupChild in
         NCMDView(markdown: markupChild)
       }
-      VStack {
+      VStack(alignment: .leading, spacing: childSpacing) {
         ForEach(markupChildren) { markupChild in
           markupChild
         }

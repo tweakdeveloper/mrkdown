@@ -6,7 +6,11 @@ struct NCMDParagraphView: View {
   let paragraph: Paragraph
 
   var body: some View {
-    Text(LocalizedStringKey(paragraph.format()))
+    Text(
+      LocalizedStringKey(
+        String(paragraph.format().trimmingPrefix(/\s+/))
+      )
+    )
   }
 }
 
@@ -20,7 +24,11 @@ struct NCMDParagraphView_Previews: PreviewProvider {
   static var previews: some View {
     NCMDParagraphView(paragraph: .sample)
       .padding()
-      .previewDisplayName("Paragraph")
+      .previewDisplayName("Simple Paragraph")
+      .previewLayout(.sizeThatFits)
+    NCMDParagraphView(paragraph: .leadingNewline)
+      .padding()
+      .previewDisplayName("Leading Newline Paragraph")
       .previewLayout(.sizeThatFits)
   }
 }

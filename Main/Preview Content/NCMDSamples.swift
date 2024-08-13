@@ -13,4 +13,13 @@ extension Heading {
 
 extension Paragraph {
   static let sample = Paragraph(Text("hi there"))
+  static let leadingNewline = Paragraph(Text("\n\nhowdy y'all"))
+}
+
+extension String {
+  static let sample = """
+# howdy y'all
+
+what's goin' on?
+"""
 }
