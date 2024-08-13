@@ -7,6 +7,6 @@ struct AboutView: View {
   }
 }
 
-#Preview {
+#Preview("About Screen") {
   AboutView()
 }

@@ -44,6 +44,6 @@ struct SignInView: View {
   }
 }
 
-#Preview("Sign In View") {
+#Preview("Sign In Screen") {
   SignInView()
 }

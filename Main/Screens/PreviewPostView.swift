@@ -19,7 +19,7 @@ struct PreviewPostView: View {
   }
 }
 
-#Preview {
+#Preview("Preview Post Screen") {
   NavigationStack {
     PreviewPostView(
       post: """

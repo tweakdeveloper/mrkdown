@@ -57,7 +57,7 @@ struct MainView: View {
   }
 }
 
-#Preview {
+#Preview("Main Screen") {
   MainView()
     .environmentObject(MainModel())
 }
