@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				B3CA0EE72C5C586700891493 /* Docs */,
-				B3D8277D2C5C562D00618E3F /* Code */,
+				B3D8277D2C5C562D00618E3F /* Main */,
 				B3D8277C2C5C562D00618E3F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B3D8277D2C5C562D00618E3F /* Code */ = {
+		B3D8277D2C5C562D00618E3F /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				B3F1A18B2C63279300DE8D5B /* Components */,
@@ -106,7 +106,7 @@
 				B3D827822C5C563000618E3F /* Assets.xcassets */,
 				B3D827842C5C563000618E3F /* Preview Content */,
 			);
-			path = Code;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		B3D827842C5C563000618E3F /* Preview Content */ = {
@@ -380,7 +380,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "Code/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "Main/Preview\\ Content";
 				DEVELOPMENT_TEAM = Z3C5WBU343;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -411,7 +411,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "Code/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "Main/Preview\\ Content";
 				DEVELOPMENT_TEAM = Z3C5WBU343;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
