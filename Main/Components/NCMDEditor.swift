@@ -22,7 +22,7 @@ struct NCMDEditor: UIViewRepresentable {
     uiView.text = text
     // Focus
     DispatchQueue.main.asyncAfter(
-      deadline: DispatchTime.now() + .milliseconds(250)
+      deadline: DispatchTime.now() + .milliseconds(100)
     ) {
       if !uiView.isFocused && focused {
         uiView.becomeFirstResponder()
