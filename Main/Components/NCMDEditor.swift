@@ -1,15 +1,27 @@
 import SwiftUI
 
 struct NCMDEditor: UIViewRepresentable {
+  @Environment(\.layoutDirection) private var layoutDirection
+  @Environment(\.mainWindowSize) private var mainWindowSize
+
   @Binding var focused: Bool
   @Binding var text: String
 
+  init(text: Binding<String>, focused: Binding<Bool>) {
+    self._focused = focused
+    self._text = text
+  }
+
   func makeCoordinator() -> Coordinator {
-    return Coordinator($text, $focused)
+    return Coordinator($text, $focused, layoutDirection, mainWindowSize)
   }
 
   func makeUIView(context: Context) -> UITextView {
     let textView = UITextView()
+    textView.addToolbar(
+      windowSize: context.coordinator.mainWindowSize,
+      isRTL: context.coordinator.layoutDirection == .rightToLeft
+    )
     textView.delegate = context.coordinator
     textView.font = UIFont.preferredFont(forTextStyle: .body)
     textView.isScrollEnabled = false
@@ -30,15 +42,36 @@ struct NCMDEditor: UIViewRepresentable {
         uiView.resignFirstResponder()
       }
     }
+    // Toolbar direction
+    let newLayoutDirection = context.environment.layoutDirection
+    let newMainWindowSize = context.environment.mainWindowSize
+    if context.coordinator.layoutDirection != newLayoutDirection ||
+        context.coordinator.mainWindowSize != newMainWindowSize {
+      uiView.inputAccessoryView = nil
+      uiView.addToolbar(
+        windowSize: newMainWindowSize,
+        isRTL: newLayoutDirection == .rightToLeft
+      )
+      context.coordinator.layoutDirection = newLayoutDirection
+    }
   }
 
   class Coordinator: NSObject, UITextViewDelegate {
     var focused: Binding<Bool>
+    var layoutDirection: LayoutDirection
+    var mainWindowSize: CGSize
     var text: Binding<String>
 
-    init(_ text: Binding<String>, _ focused: Binding<Bool>) {
+    init(
+      _ text: Binding<String>,
+      _ focused: Binding<Bool>,
+      _ layoutDirection: LayoutDirection,
+      _ mainWindowSize: CGSize
+    ) {
       self.text = text
       self.focused = focused
+      self.layoutDirection = layoutDirection
+      self.mainWindowSize = mainWindowSize
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -55,10 +88,16 @@ struct NCMDEditor: UIViewRepresentable {
   }
 }
 
-/*
 extension UITextView {
-  func addToolbar(isRTL: Bool) {
-    let toolbar = UIToolbar()
+  func addToolbar(windowSize: CGSize, isRTL: Bool) {
+    let toolbar = UIToolbar(
+      frame: CGRect(
+        x: 0,
+        y: 0,
+        width: windowSize.width,
+        height: 50
+      )
+    )
     let boldButton = UIBarButtonItem(image: UIImage(systemName: "bold"))
     let italicButton = UIBarButtonItem(image: UIImage(systemName: "italic"))
     let underlineButton = UIBarButtonItem(
@@ -100,7 +139,6 @@ extension UITextView {
     self.resignFirstResponder()
   }
 }
-*/
 
 /*
  We're using a PreviewProvider here instead of a #Preview(_:traits:body:)
@@ -110,10 +148,13 @@ extension UITextView {
  */
 struct NCMDEditor_Previews: PreviewProvider {
   static var previews: some View {
-    NCMDEditor(
-      focused: Binding<Bool>.constant(false),
-      text: Binding<String>.constant(.sample)
-    )
+    GeometryReader { geometry in
+      NCMDEditor(
+        text: Binding<String>.constant(.sample),
+        focused: Binding<Bool>.constant(false)
+      )
+      .environment(\.mainWindowSize, geometry.size)
+    }
       .padding()
       .previewDevice("NC Markdown Editor")
       .previewLayout(.sizeThatFits)

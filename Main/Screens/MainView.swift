@@ -7,60 +7,63 @@ struct MainView: View {
 
   var body: some View {
     NavigationStack {
-      ScrollView {
-        NCMDEditor(focused: $editorFocused, text: $model.postText)
+      GeometryReader { geometry in
+        ScrollView {
+          NCMDEditor(text: $model.postText, focused: $editorFocused)
+            .environment(\.mainWindowSize, geometry.size)
+        }
       }
-        .alert(
-          Text("Submit post without previewing?"),
-          isPresented: $model.shouldShowSubmitConfirmation
-        ) {
-          Button("No", role: .cancel, action: model.showPreview)
-          Button("Yes", role: .destructive) {
-            model.submitPost(shouldOverrideConfirmation: true)
-          }
-        } message: {
-          Text(
-            "You haven't yet previewed your latest modifications to the " +
-            "post. Are you sure you want to submit the post?"
+      .alert(
+        Text("Submit post without previewing?"),
+        isPresented: $model.shouldShowSubmitConfirmation
+      ) {
+        Button("No", role: .cancel, action: model.showPreview)
+        Button("Yes", role: .destructive) {
+          model.submitPost(shouldOverrideConfirmation: true)
+        }
+      } message: {
+        Text(
+          "You haven't yet previewed your latest modifications to the " +
+          "post. Are you sure you want to submit the post?"
+        )
+      }
+      .navigationTitle("Create a Post")
+      .onTapGesture {
+        editorFocused = true
+      }
+      .padding(.horizontal)
+      .sheet(isPresented: $model.isPreviewing) {
+        NavigationStack {
+          PreviewPostView(post: model.postText)
+        }
+      }
+      .sheet(isPresented: $model.shouldLogUserIn) {
+        SignInView()
+      }
+      .toolbar {
+        ToolbarItemGroup(placement: .bottomBar) {
+          Spacer()
+          Button(
+            "Preview Post",
+            systemImage: "doc",
+            action: model.showPreview
           )
         }
-        .navigationTitle("Create a Post")
-        .onTapGesture {
-          editorFocused = true
-        }
-        .padding(.horizontal)
-        .sheet(isPresented: $model.isPreviewing) {
-          NavigationStack {
-            PreviewPostView(post: model.postText)
-          }
-        }
-        .sheet(isPresented: $model.shouldLogUserIn) {
-          SignInView()
-        }
-        .toolbar {
-          ToolbarItemGroup(placement: .bottomBar) {
-            Spacer()
-            Button(
-              "Preview Post",
-              systemImage: "doc",
-              action: model.showPreview
-            )
-          }
-          ToolbarItemGroup(placement: .topBarTrailing) {
-            Menu("More Options", systemImage: "ellipsis.rectangle") {
-              NavigationLink {
-                AboutView()
-              } label: {
-                Label("About mrkdown", systemImage: "info")
-              }
+        ToolbarItemGroup(placement: .topBarTrailing) {
+          Menu("More Options", systemImage: "ellipsis.rectangle") {
+            NavigationLink {
+              AboutView()
+            } label: {
+              Label("About mrkdown", systemImage: "info")
             }
-            Button(
-              "Submit Post",
-              systemImage: "paperplane",
-              action: model.submitPost
-            )
           }
+          Button(
+            "Submit Post",
+            systemImage: "paperplane",
+            action: model.submitPost
+          )
         }
+      }
     }
   }
 }
