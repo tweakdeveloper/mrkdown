@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct NCMDEditor: UIViewRepresentable {
+  @Binding var focused: Bool
   @Binding var text: String
 
   func makeCoordinator() -> Coordinator {
@@ -17,7 +18,18 @@ struct NCMDEditor: UIViewRepresentable {
   }
 
   func updateUIView(_ uiView: UITextView, context: Context) {
+    // Content
     uiView.text = text
+    // Focus
+    DispatchQueue.main.asyncAfter(
+      deadline: DispatchTime.now() + .milliseconds(250)
+    ) {
+      if !uiView.isFocused && focused {
+        uiView.becomeFirstResponder()
+      } else if uiView.isFocused && !focused {
+        uiView.resignFirstResponder()
+      }
+    }
   }
 
   class Coordinator: NSObject, UITextViewDelegate {
@@ -88,7 +100,10 @@ extension UITextView {
  */
 struct NCMDEditor_Previews: PreviewProvider {
   static var previews: some View {
-    NCMDEditor(text: Binding<String>.constant(.sample))
+    NCMDEditor(
+      focused: Binding<Bool>.constant(false),
+      text: Binding<String>.constant(.sample)
+    )
       .padding()
       .previewDevice("NC Markdown Editor")
       .previewLayout(.sizeThatFits)

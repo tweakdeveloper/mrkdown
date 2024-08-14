@@ -3,10 +3,12 @@ import SwiftUI
 struct MainView: View {
   @EnvironmentObject var model: MainModel
 
+  @State private var editorFocused = false
+
   var body: some View {
     NavigationStack {
       ScrollView {
-        NCMDEditor(text: $model.postText)
+        NCMDEditor(focused: $editorFocused, text: $model.postText)
       }
         .alert(
           Text("Submit post without previewing?"),
@@ -23,6 +25,9 @@ struct MainView: View {
           )
         }
         .navigationTitle("Create a Post")
+        .onTapGesture {
+          editorFocused = true
+        }
         .padding(.horizontal)
         .sheet(isPresented: $model.isPreviewing) {
           NavigationStack {
