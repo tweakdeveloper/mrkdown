@@ -3,11 +3,16 @@ import SwiftUI
 struct MainView: View {
   @EnvironmentObject var model: MainModel
 
-  @FocusState private var editorIsFocused
+  @State private var shouldShowKeyboard = false
 
   var body: some View {
     NavigationStack {
-      TextEditor(text: $model.postText)
+      ScrollView {
+        NCMDEditor(
+          shouldShowKeyboard: $shouldShowKeyboard,
+          text: $model.postText
+        )
+      }
         .alert(
           Text("Submit post without previewing?"),
           isPresented: $model.shouldShowSubmitConfirmation
@@ -22,8 +27,10 @@ struct MainView: View {
             "post. Are you sure you want to submit the post?"
           )
         }
-        .focused($editorIsFocused)
         .navigationTitle("Create a Post")
+        .onTapGesture {
+          shouldShowKeyboard = true
+        }
         .padding(.horizontal)
         .sheet(isPresented: $model.isPreviewing) {
           NavigationStack {
@@ -41,24 +48,6 @@ struct MainView: View {
               systemImage: "doc",
               action: model.showPreview
             )
-          }
-          ToolbarItemGroup(placement: .keyboard) {
-            ZStack {
-              HStack {
-                Button("Add Bold", systemImage: "bold") {
-                }
-                Button("Add Italics", systemImage: "italic") {
-                }
-                Button("Add Underline", systemImage: "underline") {
-                }
-              }
-              HStack {
-                Spacer()
-                Button("Done") {
-                  editorIsFocused = false
-                }
-              }
-            }
           }
           ToolbarItemGroup(placement: .topBarTrailing) {
             Menu("More Options", systemImage: "ellipsis.rectangle") {
