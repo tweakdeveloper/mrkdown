@@ -40,7 +40,7 @@ struct NCMDEditor: UIViewRepresentable {
     }
 
     func textViewDidChange(_ textView: UITextView) {
-      self.text.wrappedValue = textView.text
+      text.wrappedValue = textView.text
     }
   }
 }
