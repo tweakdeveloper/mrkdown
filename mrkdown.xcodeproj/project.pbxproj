@@ -135,9 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				B3BB0B5B2C6B68F900FD4664 /* NCMDEditor.swift */,
-				B324563C2C631DF300AE2C72 /* NCMDView.swift */,
 				B3F1A18C2C63281900DE8D5B /* NCMDHeadingView.swift */,
 				B3F1A1922C6362E000DE8D5B /* NCMDParagraphView.swift */,
+				B324563C2C631DF300AE2C72 /* NCMDView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
