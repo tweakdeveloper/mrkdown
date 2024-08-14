@@ -5,7 +5,7 @@ struct NCMDEditor: UIViewRepresentable {
   @Binding var text: String
 
   func makeCoordinator() -> Coordinator {
-    return Coordinator($text)
+    return Coordinator($text, $focused)
   }
 
   func makeUIView(context: Context) -> UITextView {
@@ -33,14 +33,24 @@ struct NCMDEditor: UIViewRepresentable {
   }
 
   class Coordinator: NSObject, UITextViewDelegate {
+    var focused: Binding<Bool>
     var text: Binding<String>
 
-    init(_ text: Binding<String>) {
+    init(_ text: Binding<String>, _ focused: Binding<Bool>) {
       self.text = text
+      self.focused = focused
+    }
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+      focused.wrappedValue = true
     }
 
     func textViewDidChange(_ textView: UITextView) {
       text.wrappedValue = textView.text
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+      focused.wrappedValue = false
     }
   }
 }
