@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct NCMDEditor: UIViewRepresentable {
-  @Environment(\.layoutDirection) private var direction
-
   @Binding var text: String
 
   func makeCoordinator() -> Coordinator {
@@ -19,7 +17,6 @@ struct NCMDEditor: UIViewRepresentable {
   }
 
   func updateUIView(_ uiView: UITextView, context: Context) {
-    uiView.addToolbar(isRTL: direction == .rightToLeft)
     uiView.text = text
   }
 
@@ -36,6 +33,7 @@ struct NCMDEditor: UIViewRepresentable {
   }
 }
 
+/*
 extension UITextView {
   func addToolbar(isRTL: Bool) {
     let toolbar = UIToolbar()
@@ -80,6 +78,7 @@ extension UITextView {
     self.resignFirstResponder()
   }
 }
+*/
 
 /*
  We're using a PreviewProvider here instead of a #Preview(_:traits:body:)
