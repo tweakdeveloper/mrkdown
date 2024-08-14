@@ -3,15 +3,10 @@ import SwiftUI
 struct MainView: View {
   @EnvironmentObject var model: MainModel
 
-  @State private var shouldShowKeyboard = false
-
   var body: some View {
     NavigationStack {
       ScrollView {
-        NCMDEditor(
-          shouldShowKeyboard: $shouldShowKeyboard,
-          text: $model.postText
-        )
+        NCMDEditor(text: $model.postText)
       }
         .alert(
           Text("Submit post without previewing?"),
@@ -28,9 +23,6 @@ struct MainView: View {
           )
         }
         .navigationTitle("Create a Post")
-        .onTapGesture {
-          shouldShowKeyboard = true
-        }
         .padding(.horizontal)
         .sheet(isPresented: $model.isPreviewing) {
           NavigationStack {

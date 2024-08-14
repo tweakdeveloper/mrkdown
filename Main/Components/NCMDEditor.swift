@@ -3,16 +3,14 @@ import SwiftUI
 struct NCMDEditor: UIViewRepresentable {
   @Environment(\.layoutDirection) private var direction
 
-  @Binding var shouldShowKeyboard: Bool
   @Binding var text: String
 
   func makeCoordinator() -> Coordinator {
-    return Coordinator($text, $shouldShowKeyboard)
+    return Coordinator($text)
   }
 
   func makeUIView(context: Context) -> UITextView {
     let textView = UITextView()
-    textView.addToolbar(isRTL: direction == .rightToLeft)
     textView.delegate = context.coordinator
     textView.font = UIFont.preferredFont(forTextStyle: .body)
     textView.isScrollEnabled = false
@@ -23,32 +21,17 @@ struct NCMDEditor: UIViewRepresentable {
   func updateUIView(_ uiView: UITextView, context: Context) {
     uiView.addToolbar(isRTL: direction == .rightToLeft)
     uiView.text = text
-    if shouldShowKeyboard {
-      uiView.becomeFirstResponder()
-    } else {
-      uiView.resignFirstResponder()
-    }
   }
 
   class Coordinator: NSObject, UITextViewDelegate {
-    var shouldShowKeyboard: Binding<Bool>
     var text: Binding<String>
 
-    init(_ text: Binding<String>, _ shouldShowKeyboard: Binding<Bool>) {
+    init(_ text: Binding<String>) {
       self.text = text
-      self.shouldShowKeyboard = shouldShowKeyboard
     }
 
     func textViewDidChange(_ textView: UITextView) {
       self.text.wrappedValue = textView.text
-    }
-
-    func textViewDidBeginEditing(_ textView: UITextView) {
-      self.shouldShowKeyboard.wrappedValue = true
-    }
-
-    func textViewDidEndEditing(_ textView: UITextView) {
-      self.shouldShowKeyboard.wrappedValue = false
     }
   }
 }
@@ -106,10 +89,7 @@ extension UITextView {
  */
 struct NCMDEditor_Previews: PreviewProvider {
   static var previews: some View {
-    NCMDEditor(
-      shouldShowKeyboard: Binding.constant(false),
-      text: Binding<String>.constant(.sample)
-    )
+    NCMDEditor(text: Binding<String>.constant(.sample))
       .padding()
       .previewDevice("NC Markdown Editor")
       .previewLayout(.sizeThatFits)
