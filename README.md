@@ -2,6 +2,9 @@
 
 mrkdown is an iOS app to create Tumblr posts with Markdown.
 
+![editor screen](docs/screenshots/editor.png)
+![preview screen](docs/screenshots/preview.png)
+
 ## Motivation
 
 I have become frustrated with the official [Tumblr](https://tumblr.com) iOS 
