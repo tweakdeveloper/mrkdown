@@ -26,7 +26,9 @@ post in Markdown.
 * [ ] Syntax highlighting in editor view
 * [ ] Report bugs in-app that open GitHub issues
 * [ ] iPad layout
-  * [ ] Potential Mac Catalyst support
+  * [ ] ~Potential Mac Catalyst support~
+    * Due to the Mac Catalyst framework supporting UIKit rather than SwiftUI,
+    this feature will most likely not be implemented.
 
 ## Compatibility
 
