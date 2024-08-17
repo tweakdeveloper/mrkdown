@@ -5,7 +5,7 @@ responsibly disclose your findings, and will make every effort to acknowledge
 your contributions.
 
 To report a security issue, please use the GitHub Security Advisory
-["Report a Vulnerability"](https://github.com/tweakdeveloper/mrkdown/security/advisories/new)
+["Report a Vulnerability"](https://github.com/tweakdeveloper/mrkdown-iOS/security/advisories/new)
 tab.
 
 I will send a response indicating the next steps in handling your report. After

@@ -13,5 +13,5 @@ not a Mozilla project, the reporting process will differ.
 ## Reporting
 
 Violations can be reported using a
-[GitHub issue](https://github.com/tweakdeveloper/mrkdown/issues/new/choose).
+[GitHub issue](https://github.com/tweakdeveloper/mrkdown-iOS/issues/new/choose).
 Please use the "Code of Conduct Violation Report" to create a report.

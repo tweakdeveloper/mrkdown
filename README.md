@@ -35,7 +35,7 @@ post in Markdown.
 The current lowest supported iOS version is 16.4. If your iPhone appears in
 [this list](https://support.apple.com/guide/iphone/supported-models-iphe3fa5df43/16.0/ios/16.0),
 it should be supported. Please
-[open an issue](https://github.com/tweakdeveloper/mrkdown/issues/new/choose)
+[open an issue](https://github.com/tweakdeveloper/mrkdown-iOS/issues/new/choose)
 using the "Bug Report" template if you experience any unexpected issues.
 
 ## Contributing
@@ -43,7 +43,7 @@ using the "Bug Report" template if you experience any unexpected issues.
 I'm happy to have you join me in creating mrkdown! Please reference
 [my contribution guidelines](CONTRIBUTING.md), and if anything is unclear,
 don't hesitate to
-[open an issue](https://github.com/tweakdeveloper/mrkdown/issues/new/choose).
+[open an issue](https://github.com/tweakdeveloper/mrkdown-iOS/issues/new/choose).
 
 ### Code of Conduct
 
