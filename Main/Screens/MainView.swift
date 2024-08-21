@@ -73,7 +73,8 @@ struct MainView: View {
             }
           }
         } else {
-          view.onChange(of: model.shouldLogUserIn) { shouldLogUserIn in
+          view.onChange(of: model.shouldLogUserIn) { oldVal in
+            let shouldLogUserIn = !oldVal
             if shouldLogUserIn {
               Task {
                 await performLogin()
