@@ -13,8 +13,10 @@
 		B324563D2C631DF300AE2C72 /* NCMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B324563C2C631DF300AE2C72 /* NCMDView.swift */; };
 		B347E25C2C6D367C0002AE3F /* MainWindowSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347E25B2C6D367C0002AE3F /* MainWindowSize.swift */; };
 		B361DEF82C684F08009D91E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B361DEF72C684F08009D91E4 /* AboutView.swift */; };
+		B39583B52C757B13002F47C5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B39583B42C757B13002F47C5 /* Alamofire */; };
 		B39583B92C757EFA002F47C5 /* ApplyModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39583B82C757EFA002F47C5 /* ApplyModifier.swift */; };
 		B39583BB2C7587D2002F47C5 /* GetQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39583BA2C7587D2002F47C5 /* GetQueryItem.swift */; };
+		B39583BE2C759371002F47C5 /* AlamofireNetworkActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = B39583BD2C759371002F47C5 /* AlamofireNetworkActivityIndicator */; };
 		B3B9C0A02C6725B50069FD9E /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9C09F2C6725B50069FD9E /* MainModel.swift */; };
 		B3B9C0A42C6741760069FD9E /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = B3B9C0A32C6741750069FD9E /* CONTRIBUTING.md */; };
 		B3BB0B5C2C6B68F900FD4664 /* NCMDEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB0B5B2C6B68F900FD4664 /* NCMDEditor.swift */; };
@@ -57,7 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B39583BE2C759371002F47C5 /* AlamofireNetworkActivityIndicator in Frameworks */,
 				B323D9622C61C9ED00EA8BDA /* Markdown in Frameworks */,
+				B39583B52C757B13002F47C5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +179,8 @@
 			name = mrkdown;
 			packageProductDependencies = (
 				B323D9612C61C9ED00EA8BDA /* Markdown */,
+				B39583B42C757B13002F47C5 /* Alamofire */,
+				B39583BD2C759371002F47C5 /* AlamofireNetworkActivityIndicator */,
 			);
 			productName = mrkdown;
 			productReference = B3D8277B2C5C562D00618E3F /* mrkdown.app */;
@@ -207,6 +213,8 @@
 			packageReferences = (
 				B323D9602C61C9ED00EA8BDA /* XCRemoteSwiftPackageReference "swift-markdown" */,
 				B30CB4902C687EFC000426D4 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				B39583B32C757B13002F47C5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B39583BC2C759371002F47C5 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */,
 			);
 			productRefGroup = B3D8277C2C5C562D00618E3F /* Products */;
 			projectDirPath = "";
@@ -502,6 +510,22 @@
 				version = 0.4.0;
 			};
 		};
+		B39583B32C757B13002F47C5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.9.1;
+			};
+		};
+		B39583BC2C759371002F47C5 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireNetworkActivityIndicator.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -509,6 +533,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B323D9602C61C9ED00EA8BDA /* XCRemoteSwiftPackageReference "swift-markdown" */;
 			productName = Markdown;
+		};
+		B39583B42C757B13002F47C5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B39583B32C757B13002F47C5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		B39583BD2C759371002F47C5 /* AlamofireNetworkActivityIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B39583BC2C759371002F47C5 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */;
+			productName = AlamofireNetworkActivityIndicator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

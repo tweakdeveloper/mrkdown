@@ -2,6 +2,8 @@ import SwiftUI
 
 import Combine
 
+import Alamofire
+
 class MainModel: ObservableObject {
   @Published var isPreviewing = false
   @Published var postText = "# howdy y'all"
@@ -22,12 +24,26 @@ class MainModel: ObservableObject {
     postTextSubscriptionCancellable = nil
   }
 
-  func hidePreview() {
-    isPreviewing = false
+  func authCodeReceived(code: String) async {
+    do {
+      let response = try await AF.request(
+        "https://mrkdown.slottedspoon.dev/exchange_code",
+        method: .post,
+        parameters: TokenExchangeParams(code: code),
+        encoder: JSONParameterEncoder.default
+      )
+        .serializingDecodable(TokenExchangeResponse.self)
+        .value
+      authToken = response.accessToken
+    } catch let error as AFError {
+      print("networking error: \(error)")
+    } catch {
+      print("??? error: \(error)")
+    }
   }
 
-  func setAuthCode(_ authCode: String) {
-    print("TODO: exchange code for token")
+  func hidePreview() {
+    isPreviewing = false
   }
 
   func showPreview() {

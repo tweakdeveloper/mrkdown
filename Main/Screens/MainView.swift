@@ -26,7 +26,7 @@ struct MainView: View {
         guard let code = urlWithToken.getQueryParam("code") else {
           throw SignInError.codeNotReceived
         }
-        model.setAuthCode(code)
+        await model.authCodeReceived(code: code)
       } else {
         throw SignInError.stateDidNotMatch(receivedState)
       }
@@ -66,7 +66,6 @@ struct MainView: View {
       .apply { view in
         if #available(iOS 17, *) {
           view.onChange(of: model.shouldLogUserIn) {
-            print("should log user in: \(model.shouldLogUserIn)")
             if model.shouldLogUserIn {
               Task {
                 await performLogin()
@@ -75,7 +74,6 @@ struct MainView: View {
           }
         } else {
           view.onChange(of: model.shouldLogUserIn) { shouldLogUserIn in
-            print("should log user in: \(shouldLogUserIn)")
             if shouldLogUserIn {
               Task {
                 await performLogin()
