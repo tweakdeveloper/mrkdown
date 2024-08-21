@@ -12,7 +12,6 @@ class MainModel: ObservableObject {
   @Published var isPreviewing = false
   @Published var postText = "# howdy y'all"
   @Published var shouldShowSubmitConfirmation = false
-  @Published var shouldLogUserIn = false
 
   private var authToken: String?
   private var hasBeenPreviewed = false
@@ -39,22 +38,24 @@ class MainModel: ObservableObject {
     postTextSubscriptionCancellable = nil
   }
 
-  private func authCodeReceived(code: String) async {
-    do {
-      let response = try await AF.request(
-        "\(apiBase)/exchange_code",
-        method: .post,
-        parameters: TokenExchangeParams(code: code),
-        encoder: JSONParameterEncoder.default
-      )
-        .serializingDecodable(TokenExchangeResponse.self)
-        .value
-      authToken = response.accessToken
-      processQueue()
-    } catch let error as AFError {
-      print("networking error: \(error)")
-    } catch {
-      print("??? error: \(error)")
+  private func authCodeReceived(code: String) {
+    Task.detached(priority: .userInitiated) {
+      do {
+        let response = try await AF.request(
+          "\(self.apiBase)/exchange_code",
+          method: .post,
+          parameters: TokenExchangeParams(code: code),
+          encoder: JSONParameterEncoder.default
+        )
+          .serializingDecodable(TokenExchangeResponse.self)
+          .value
+        self.authToken = response.accessToken
+        self.processQueue()
+      } catch let error as AFError {
+        print("networking error: \(error)")
+      } catch {
+        print("??? error: \(error)")
+      }
     }
   }
 
@@ -87,7 +88,7 @@ class MainModel: ObservableObject {
         guard let code = urlWithToken.getQueryParam("code") else {
           throw SignInError.codeNotReceived
         }
-        await authCodeReceived(code: code)
+        authCodeReceived(code: code)
       } else {
         throw SignInError.stateDidNotMatch(receivedState)
       }
@@ -158,7 +159,9 @@ class MainModel: ObservableObject {
   func submitPost(shouldOverrideConfirmation: Bool) {
     if shouldOverrideConfirmation || hasBeenPreviewed {
       if authToken == nil {
-        shouldLogUserIn = true
+        Task(priority: .userInitiated) {
+          await performLogin()
+        }
         queue.append(.submitPost(postText))
       } else {
         performPostSubmit(blog: "mrkdown-playground")
