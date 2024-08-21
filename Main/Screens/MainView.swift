@@ -58,11 +58,8 @@ struct MainView: View {
 
   var body: some View {
     NavigationStack {
-      GeometryReader { geometry in
-        ScrollView {
-          NCMDEditor(text: $model.postText, focused: $editorFocused)
-            .environment(\.mainWindowSize, geometry.size)
-        }
+      ScrollView {
+        NCMDEditor(text: $model.postText, focused: $editorFocused)
       }
       .alert(
         Text("Submit post without previewing?"),
