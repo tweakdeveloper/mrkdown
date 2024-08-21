@@ -7,6 +7,8 @@ import Alamofire
 class MainModel: ObservableObject {
   private let apiBase = "https://mrkdown.slottedspoon.dev"
 
+  @Environment(\.webAuthenticationSession) private var webAuthenticationSession
+
   @Published var isPreviewing = false
   @Published var postText = "# howdy y'all"
   @Published var shouldShowSubmitConfirmation = false
@@ -21,6 +23,12 @@ class MainModel: ObservableObject {
     case submitPost(String)
   }
 
+  private enum SignInError: Error {
+    case codeNotReceived
+    case stateDidNotMatch(String)
+    case stateNotReceived
+  }
+
   init() {
     postTextSubscriptionCancellable = $postText.sink { [weak self] _ in
       self?.hasBeenPreviewed = false
@@ -31,7 +39,7 @@ class MainModel: ObservableObject {
     postTextSubscriptionCancellable = nil
   }
 
-  func authCodeReceived(code: String) async {
+  private func authCodeReceived(code: String) async {
     do {
       let response = try await AF.request(
         "\(apiBase)/exchange_code",
@@ -50,8 +58,48 @@ class MainModel: ObservableObject {
     }
   }
 
+  private func buildAuthURL(withState state: String) -> URL {
+    var baseURL = URL(string: "https://mrkdown.slottedspoon.dev/init_auth_flow")!
+    baseURL.append(queryItems: [
+      URLQueryItem(name: "state", value: state),
+      URLQueryItem(name: "mobile", value: "true")
+    ])
+    return baseURL
+  }
+
   func hidePreview() {
     isPreviewing = false
+  }
+
+  private func performLogin() async {
+    let state = UUID().uuidString
+    let authURL = buildAuthURL(withState: state)
+    do {
+      let urlWithToken = try await webAuthenticationSession.authenticate(
+        using: authURL,
+        callbackURLScheme: "mrkdown",
+        preferredBrowserSession: .shared
+      )
+      guard let receivedState = urlWithToken.getQueryParam("state") else {
+        throw SignInError.stateNotReceived
+      }
+      if receivedState == state {
+        guard let code = urlWithToken.getQueryParam("code") else {
+          throw SignInError.codeNotReceived
+        }
+        await authCodeReceived(code: code)
+      } else {
+        throw SignInError.stateDidNotMatch(receivedState)
+      }
+    } catch SignInError.codeNotReceived {
+      print("code not received!")
+    } catch SignInError.stateDidNotMatch(let receivedState) {
+      print("state did not match: got \(receivedState)")
+    } catch SignInError.stateNotReceived {
+      print("state not received!")
+    } catch {
+      print("something bad happened: \(error)")
+    }
   }
 
   private func performPostSubmit(postText: String? = nil, blog: String) {
@@ -109,7 +157,6 @@ class MainModel: ObservableObject {
 
   func submitPost(shouldOverrideConfirmation: Bool) {
     if shouldOverrideConfirmation || hasBeenPreviewed {
-      print("should submit post")
       if authToken == nil {
         shouldLogUserIn = true
         queue.append(.submitPost(postText))

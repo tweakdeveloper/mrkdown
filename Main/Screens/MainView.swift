@@ -3,58 +3,9 @@ import SwiftUI
 import AuthenticationServices
 
 struct MainView: View {
-  @Environment(\.webAuthenticationSession)
-  private var webAuthenticationSession: WebAuthenticationSession
-
   @EnvironmentObject var model: MainModel
 
   @State private var editorFocused = false
-
-  enum SignInError: Error {
-    case codeNotReceived
-    case stateDidNotMatch(String)
-    case stateNotReceived
-  }
-
-  func buildAuthURL(withState state: String) -> URL {
-    var baseURL = URL(string: "https://mrkdown.slottedspoon.dev/init_auth_flow")!
-    baseURL.append(queryItems: [
-      URLQueryItem(name: "state", value: state),
-      URLQueryItem(name: "mobile", value: "true")
-    ])
-    return baseURL
-  }
-
-  func performLogin() async {
-    let state = UUID().uuidString
-    let authURL = buildAuthURL(withState: state)
-    do {
-      let urlWithToken = try await webAuthenticationSession.authenticate(
-        using: authURL,
-        callbackURLScheme: "mrkdown",
-        preferredBrowserSession: .shared
-      )
-      guard let receivedState = urlWithToken.getQueryParam("state") else {
-        throw SignInError.stateNotReceived
-      }
-      if receivedState == state {
-        guard let code = urlWithToken.getQueryParam("code") else {
-          throw SignInError.codeNotReceived
-        }
-        await model.authCodeReceived(code: code)
-      } else {
-        throw SignInError.stateDidNotMatch(receivedState)
-      }
-    } catch SignInError.codeNotReceived {
-      print("code not received!")
-    } catch SignInError.stateDidNotMatch(let receivedState) {
-      print("state did not match: got \(receivedState)")
-    } catch SignInError.stateNotReceived {
-      print("state not received!")
-    } catch {
-      print("something bad happened: \(error)")
-    }
-  }
 
   var body: some View {
     NavigationStack {
@@ -74,26 +25,6 @@ struct MainView: View {
           "You haven't yet previewed your latest modifications to the " +
           "post. Are you sure you want to submit the post?"
         )
-      }
-      .apply { view in
-        if #available(iOS 17, *) {
-          view.onChange(of: model.shouldLogUserIn) {
-            if model.shouldLogUserIn {
-              Task {
-                await performLogin()
-              }
-            }
-          }
-        } else {
-          view.onChange(of: model.shouldLogUserIn) { oldVal in
-            let shouldLogUserIn = !oldVal
-            if shouldLogUserIn {
-              Task {
-                await performLogin()
-              }
-            }
-          }
-        }
       }
       .navigationTitle("Create a Post")
       .onTapGesture {
