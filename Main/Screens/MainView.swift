@@ -1,7 +1,10 @@
 import SwiftUI
 
+import AuthenticationServices
+
 struct MainView: View {
-  @Environment(\.webAuthenticationSession) private var webAuthenticationSession
+  @Environment(\.webAuthenticationSession)
+  private var webAuthenticationSession: WebAuthenticationSession
 
   @EnvironmentObject var model: MainModel
 
