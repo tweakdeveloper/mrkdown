@@ -1,9 +1,42 @@
 import SwiftUI
 
 struct MainView: View {
+  @Environment(\.webAuthenticationSession) private var webAuthenticationSession
+
   @EnvironmentObject var model: MainModel
 
   @State private var editorFocused = false
+
+  func performLogin() async {
+    let state = UUID().uuidString
+    let authURL = buildAuthURL(withState: state)
+    do {
+      let urlWithToken = try await webAuthenticationSession.authenticate(
+        using: authURL,
+        callbackURLScheme: "mrkdown",
+        preferredBrowserSession: .shared
+      )
+      guard let receivedState = urlWithToken.getQueryParam("state") else {
+        throw SignInError.stateNotReceived
+      }
+      if receivedState == state {
+        guard let code = urlWithToken.getQueryParam("code") else {
+          throw SignInError.codeNotReceived
+        }
+        model.setAuthCode(code)
+      } else {
+        throw SignInError.stateDidNotMatch(receivedState)
+      }
+    } catch SignInError.codeNotReceived {
+      print("code not received!")
+    } catch SignInError.stateDidNotMatch(let receivedState) {
+      print("state did not match: got \(receivedState)")
+    } catch SignInError.stateNotReceived {
+      print("state not received!")
+    } catch {
+      print("something bad happened: \(error)")
+    }
+  }
 
   var body: some View {
     NavigationStack {
@@ -27,6 +60,27 @@ struct MainView: View {
           "post. Are you sure you want to submit the post?"
         )
       }
+      .apply { view in
+        if #available(iOS 17, *) {
+          view.onChange(of: model.shouldLogUserIn) {
+            print("should log user in: \(model.shouldLogUserIn)")
+            if model.shouldLogUserIn {
+              Task {
+                await performLogin()
+              }
+            }
+          }
+        } else {
+          view.onChange(of: model.shouldLogUserIn) { shouldLogUserIn in
+            print("should log user in: \(shouldLogUserIn)")
+            if shouldLogUserIn {
+              Task {
+                await performLogin()
+              }
+            }
+          }
+        }
+      }
       .navigationTitle("Create a Post")
       .onTapGesture {
         editorFocused = true
@@ -36,9 +90,6 @@ struct MainView: View {
         NavigationStack {
           PreviewPostView(post: model.postText)
         }
-      }
-      .sheet(isPresented: $model.shouldLogUserIn) {
-        SignInView()
       }
       .toolbar {
         ToolbarItemGroup(placement: .bottomBar) {

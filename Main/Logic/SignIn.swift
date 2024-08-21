@@ -10,5 +10,7 @@ func buildAuthURL(withState state: String) -> URL {
 }
 
 enum SignInError: Error {
+  case codeNotReceived
   case stateDidNotMatch(String)
+  case stateNotReceived
 }

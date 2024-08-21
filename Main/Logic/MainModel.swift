@@ -8,6 +8,7 @@ class MainModel: ObservableObject {
   @Published var shouldShowSubmitConfirmation = false
   @Published var shouldLogUserIn = false
 
+  private var authToken: String?
   private var hasBeenPreviewed = false
   private var postTextSubscriptionCancellable: Cancellable?
 
@@ -25,6 +26,10 @@ class MainModel: ObservableObject {
     isPreviewing = false
   }
 
+  func setAuthCode(_ authCode: String) {
+    print("TODO: exchange code for token")
+  }
+
   func showPreview() {
     hasBeenPreviewed = true
     isPreviewing = true
@@ -37,6 +42,9 @@ class MainModel: ObservableObject {
   func submitPost(shouldOverrideConfirmation: Bool) {
     if shouldOverrideConfirmation || hasBeenPreviewed {
       print("should submit post")
+      if authToken == nil {
+        shouldLogUserIn = true
+      }
     } else {
       shouldShowSubmitConfirmation = true
     }
