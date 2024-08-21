@@ -10,6 +10,21 @@ struct MainView: View {
 
   @State private var editorFocused = false
 
+  enum SignInError: Error {
+    case codeNotReceived
+    case stateDidNotMatch(String)
+    case stateNotReceived
+  }
+
+  func buildAuthURL(withState state: String) -> URL {
+    var baseURL = URL(string: "https://mrkdown.slottedspoon.dev/init_auth_flow")!
+    baseURL.append(queryItems: [
+      URLQueryItem(name: "state", value: state),
+      URLQueryItem(name: "mobile", value: "true")
+    ])
+    return baseURL
+  }
+
   func performLogin() async {
     let state = UUID().uuidString
     let authURL = buildAuthURL(withState: state)
