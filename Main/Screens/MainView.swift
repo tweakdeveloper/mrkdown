@@ -48,6 +48,11 @@ struct MainView: View {
         ToolbarItemGroup(placement: .topBarTrailing) {
           Menu("More Options", systemImage: "ellipsis.rectangle") {
             NavigationLink {
+              BlogSelectorView()
+            } label: {
+              Label("Blog", systemImage: "person.crop.circle.badge.checkmark")
+            }
+            NavigationLink {
               AboutView()
             } label: {
               Label("About mrkdown", systemImage: "info")
