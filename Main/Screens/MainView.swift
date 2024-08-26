@@ -3,7 +3,7 @@ import SwiftUI
 import AuthenticationServices
 
 struct MainView: View {
-  @EnvironmentObject var model: MainModel
+  @StateObject private var model = MainModel()
 
   @State private var editorFocused = false
 
@@ -71,5 +71,4 @@ struct MainView: View {
 
 #Preview("Main Screen") {
   MainView()
-    .environmentObject(MainModel())
 }
