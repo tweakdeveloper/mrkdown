@@ -141,6 +141,7 @@ class MainModel: ObservableObject {
       let action = queue.removeFirst()
       switch action {
       case .submitPost(let postText):
+        // TODO: add ability to specify blog
         performPostSubmit(postText: postText, blog: "mrkdown-playground")
       }
       itemsExistInQueue = queue.count != 0
