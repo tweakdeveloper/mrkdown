@@ -81,11 +81,11 @@ class MainModel: ObservableObject {
         callbackURLScheme: "mrkdown",
         preferredBrowserSession: .shared
       )
-      guard let receivedState = urlWithToken.getQueryParam("state") else {
+      guard let receivedState = urlWithToken.getQueryItem("state") else {
         throw SignInError.stateNotReceived
       }
       if receivedState == state {
-        guard let code = urlWithToken.getQueryParam("code") else {
+        guard let code = urlWithToken.getQueryItem("code") else {
           throw SignInError.codeNotReceived
         }
         authCodeReceived(code: code)
