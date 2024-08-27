@@ -3,9 +3,15 @@ import SwiftUI
 import Markdown
 
 struct PreviewPostView: View {
-  @EnvironmentObject var model: MainModel
+  @StateObject private var model: ViewModel
 
-  let post: String
+  private let post: String
+
+  init(post: String, showPreview: Binding<Bool>) {
+    self.post = post
+
+    self._model = StateObject(wrappedValue: ViewModel(showPreview: showPreview))
+  }
 
   var body: some View {
     ScrollView {
@@ -23,9 +29,22 @@ struct PreviewPostView: View {
   }
 }
 
+extension PreviewPostView {
+  private class ViewModel: ObservableObject {
+    @Binding var showPreview: Bool
+
+    init(showPreview: Binding<Bool>) {
+      self._showPreview = showPreview
+    }
+
+    func hidePreview() {
+      showPreview = false
+    }
+  }
+}
+
 #Preview("Preview Post Screen") {
   NavigationStack {
-    PreviewPostView(post: .sample)
-    .environmentObject(MainModel())
+    PreviewPostView(post: .sample, showPreview: Binding.constant(true))
   }
 }

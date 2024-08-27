@@ -33,7 +33,10 @@ struct MainView: View {
       .padding(.horizontal)
       .sheet(isPresented: $model.isPreviewing) {
         NavigationStack {
-          PreviewPostView(post: model.postText)
+          PreviewPostView(
+            post: model.postText,
+            showPreview: $model.isPreviewing
+          )
         }
       }
       .toolbar {
