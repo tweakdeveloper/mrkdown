@@ -9,6 +9,20 @@ struct NCMDEditor: UIViewRepresentable {
     self._text = text
   }
 
+  private func buildToolbar(withContext context: Context) -> UIToolbar {
+    let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 1000, height: 50))
+    let spacer = UIBarButtonItem(systemItem: .flexibleSpace)
+    let done = UIBarButtonItem(
+      title: "Done",
+      style: .done,
+      target: context.coordinator,
+      action: #selector(Coordinator.doneButtonPressed)
+    )
+    toolbar.items = [spacer, done]
+    toolbar.sizeToFit()
+    return toolbar
+  }
+
   func makeCoordinator() -> Coordinator {
     return Coordinator($text, $focused)
   }
@@ -17,6 +31,7 @@ struct NCMDEditor: UIViewRepresentable {
     let textView = UITextView()
     textView.delegate = context.coordinator
     textView.font = UIFont.preferredFont(forTextStyle: .body)
+    textView.inputAccessoryView = buildToolbar(withContext: context)
     textView.isScrollEnabled = false
     textView.text = text
     return textView
@@ -29,9 +44,9 @@ struct NCMDEditor: UIViewRepresentable {
     DispatchQueue.main.asyncAfter(
       deadline: DispatchTime.now() + .milliseconds(100)
     ) {
-      if !uiView.isFocused && focused {
+      if !uiView.isFirstResponder && focused {
         uiView.becomeFirstResponder()
-      } else if uiView.isFocused && !focused {
+      } else if uiView.isFirstResponder && !focused {
         uiView.resignFirstResponder()
       }
     }
@@ -44,6 +59,10 @@ struct NCMDEditor: UIViewRepresentable {
     init(_ text: Binding<String>, _ focused: Binding<Bool>) {
       self._text = text
       self._focused = focused
+    }
+
+    @objc func doneButtonPressed() {
+      focused = false
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
