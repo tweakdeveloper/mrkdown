@@ -29,6 +29,7 @@ struct MainView: View {
         model.focusEditor()
       }
       .padding(.horizontal)
+      .scrollDismissesKeyboard(.immediately)
       .sheet(isPresented: $model.isPreviewing) {
         NavigationStack {
           PreviewPostView(
