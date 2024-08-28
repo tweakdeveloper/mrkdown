@@ -1,16 +1,14 @@
 import SwiftUI
 
-import AuthenticationServices
+import Combine
 
 struct MainView: View {
-  @StateObject private var model = MainModel()
-
-  @State private var editorFocused = false
+  @StateObject private var model = ViewModel()
 
   var body: some View {
     NavigationStack {
       ScrollView {
-        NCMDEditor(text: $model.postText, focused: $editorFocused)
+        NCMDEditor(text: $model.postText, focused: $model.editorFocused)
       }
       .alert(
         Text("Submit post without previewing?"),
@@ -18,7 +16,7 @@ struct MainView: View {
       ) {
         Button("No", role: .cancel, action: model.showPreview)
         Button("Yes", role: .destructive) {
-          model.submitPost(shouldOverrideConfirmation: true)
+          model.submitPost(shouldOverridePreviewRequirement: true)
         }
       } message: {
         Text(
@@ -28,7 +26,7 @@ struct MainView: View {
       }
       .navigationTitle("Create a Post")
       .onTapGesture {
-        editorFocused = true
+        model.focusEditor()
       }
       .padding(.horizontal)
       .sheet(isPresented: $model.isPreviewing) {
@@ -40,33 +38,57 @@ struct MainView: View {
         }
       }
       .toolbar {
-        ToolbarItemGroup(placement: .bottomBar) {
-          Spacer()
-          Button(
-            "Preview Post",
-            systemImage: "doc",
-            action: model.showPreview
-          )
-        }
         ToolbarItemGroup(placement: .topBarTrailing) {
-          Menu("More Options", systemImage: "ellipsis.rectangle") {
-            NavigationLink {
-              BlogSelectorView()
-            } label: {
-              Label("Blog", systemImage: "person.crop.circle.badge.checkmark")
-            }
-            NavigationLink {
-              AboutView()
-            } label: {
-              Label("About mrkdown", systemImage: "info")
-            }
-          }
+          Button("Preview Post", systemImage: "doc", action: model.showPreview)
           Button(
             "Submit Post",
             systemImage: "paperplane",
             action: model.submitPost
           )
         }
+      }
+    }
+  }
+}
+
+extension MainView {
+  private class ViewModel: ObservableObject {
+    @Published var editorFocused = false
+    @Published var isPreviewing = false
+    @Published var postText = "# howdy"
+    @Published var shouldShowSubmitConfirmation = false
+
+    private var hasBeenPreviewed = false
+    private var postTextSubscriptionCancellable: Cancellable?
+
+    init() {
+      postTextSubscriptionCancellable = $postText.sink { [weak self] _ in
+        self?.hasBeenPreviewed = false
+      }
+    }
+
+    deinit {
+      postTextSubscriptionCancellable = nil
+    }
+
+    func focusEditor() {
+      editorFocused = true
+    }
+
+    func showPreview() {
+      hasBeenPreviewed = true
+      isPreviewing = true
+    }
+
+    func submitPost() {
+      submitPost(shouldOverridePreviewRequirement: false)
+    }
+
+    func submitPost(shouldOverridePreviewRequirement: Bool) {
+      if shouldOverridePreviewRequirement || hasBeenPreviewed {
+        print("do submit here!")
+      } else {
+        shouldShowSubmitConfirmation = true
       }
     }
   }

@@ -1,24 +1,6 @@
 {
-  "originHash" : "8050975563a4d3cdbe762fe606f3378598b47cc5fcac64f7aa8acf3aa5ed33e1",
+  "originHash" : "1e10f03fae4bdfe6fb9605f5df0aae42f212ec44d707aafdde2635abebdab831",
   "pins" : [
-    {
-      "identity" : "alamofire",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Alamofire/Alamofire.git",
-      "state" : {
-        "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
-        "version" : "5.9.1"
-      }
-    },
-    {
-      "identity" : "alamofirenetworkactivityindicator",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Alamofire/AlamofireNetworkActivityIndicator.git",
-      "state" : {
-        "revision" : "392bed083e8d193aca16bfa684ee24e4bcff0510",
-        "version" : "3.1.0"
-      }
-    },
     {
       "identity" : "swift-cmark",
       "kind" : "remoteSourceControl",

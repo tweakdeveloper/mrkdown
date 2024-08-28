@@ -11,17 +11,8 @@
 		B323D9622C61C9ED00EA8BDA /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = B323D9612C61C9ED00EA8BDA /* Markdown */; };
 		B323D9642C61D5A700EA8BDA /* PreviewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */; };
 		B324563D2C631DF300AE2C72 /* NCMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B324563C2C631DF300AE2C72 /* NCMDView.swift */; };
-		B361DEF82C684F08009D91E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B361DEF72C684F08009D91E4 /* AboutView.swift */; };
-		B37DED562C7CD302007605FA /* BlogSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37DED552C7CD301007605FA /* BlogSelectorView.swift */; };
-		B38467572C75BA6A00AA29A4 /* CreatePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38467562C75BA6A00AA29A4 /* CreatePost.swift */; };
-		B384675A2C75BBD400AA29A4 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38467592C75BBD400AA29A4 /* Meta.swift */; };
-		B39583B52C757B13002F47C5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B39583B42C757B13002F47C5 /* Alamofire */; };
-		B39583BB2C7587D2002F47C5 /* GetQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39583BA2C7587D2002F47C5 /* GetQueryItem.swift */; };
-		B39583BE2C759371002F47C5 /* AlamofireNetworkActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = B39583BD2C759371002F47C5 /* AlamofireNetworkActivityIndicator */; };
-		B3B9C0A02C6725B50069FD9E /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9C09F2C6725B50069FD9E /* MainModel.swift */; };
 		B3B9C0A42C6741760069FD9E /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = B3B9C0A32C6741750069FD9E /* CONTRIBUTING.md */; };
 		B3BB0B5C2C6B68F900FD4664 /* NCMDEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB0B5B2C6B68F900FD4664 /* NCMDEditor.swift */; };
-		B3CA0EEA2C5C64CA00891493 /* TokenExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA0EE92C5C64CA00891493 /* TokenExchange.swift */; };
 		B3D8277F2C5C562D00618E3F /* NCMDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D8277E2C5C562D00618E3F /* NCMDApp.swift */; };
 		B3D827832C5C563000618E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D827822C5C563000618E3F /* Assets.xcassets */; };
 		B3D827862C5C563000618E3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D827852C5C563000618E3F /* Preview Assets.xcassets */; };
@@ -35,18 +26,11 @@
 		B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPostView.swift; sourceTree = "<group>"; };
 		B324563C2C631DF300AE2C72 /* NCMDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDView.swift; sourceTree = "<group>"; };
 		B361DEF62C682D31009D91E4 /* SECURITY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SECURITY.md; sourceTree = "<group>"; };
-		B361DEF72C684F08009D91E4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		B37DED552C7CD301007605FA /* BlogSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogSelectorView.swift; sourceTree = "<group>"; };
-		B38467562C75BA6A00AA29A4 /* CreatePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePost.swift; sourceTree = "<group>"; };
-		B38467592C75BBD400AA29A4 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
-		B39583BA2C7587D2002F47C5 /* GetQueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQueryItem.swift; sourceTree = "<group>"; };
-		B3B9C09F2C6725B50069FD9E /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		B3B9C0A22C6740BF0069FD9E /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		B3B9C0A32C6741750069FD9E /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		B3BB0B5B2C6B68F900FD4664 /* NCMDEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDEditor.swift; sourceTree = "<group>"; };
 		B3CA0EE32C5C578A00891493 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B3CA0EE52C5C57B900891493 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B3CA0EE92C5C64CA00891493 /* TokenExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenExchange.swift; sourceTree = "<group>"; };
 		B3D8277B2C5C562D00618E3F /* mrkdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mrkdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D8277E2C5C562D00618E3F /* NCMDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDApp.swift; sourceTree = "<group>"; };
 		B3D827822C5C563000618E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,41 +45,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B39583BE2C759371002F47C5 /* AlamofireNetworkActivityIndicator in Frameworks */,
 				B323D9622C61C9ED00EA8BDA /* Markdown in Frameworks */,
-				B39583B52C757B13002F47C5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B347E25A2C6D364D0002AE3F /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				B39583BA2C7587D2002F47C5 /* GetQueryItem.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		B38467582C75BB0700AA29A4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				B38467562C75BA6A00AA29A4 /* CreatePost.swift */,
-				B38467592C75BBD400AA29A4 /* Meta.swift */,
-				B3CA0EE92C5C64CA00891493 /* TokenExchange.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B3B9C08F2C6700BB0069FD9E /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				B3B9C09F2C6725B50069FD9E /* MainModel.swift */,
-			);
-			path = Logic;
-			sourceTree = "<group>";
-		};
 		B3CA0EE72C5C586700891493 /* Docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,10 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				B3F1A18B2C63279300DE8D5B /* Components */,
-				B3B9C08F2C6700BB0069FD9E /* Logic */,
-				B38467582C75BB0700AA29A4 /* Models */,
 				B3F1A18A2C63278400DE8D5B /* Screens */,
-				B347E25A2C6D364D0002AE3F /* Utilities */,
 				B3D8277E2C5C562D00618E3F /* NCMDApp.swift */,
 				B3D827822C5C563000618E3F /* Assets.xcassets */,
 				B3D827842C5C563000618E3F /* Preview Content */,
@@ -152,8 +105,6 @@
 		B3F1A18A2C63278400DE8D5B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B361DEF72C684F08009D91E4 /* AboutView.swift */,
-				B37DED552C7CD301007605FA /* BlogSelectorView.swift */,
 				B323D95A2C5F163B00EA8BDA /* MainView.swift */,
 				B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */,
 			);
@@ -190,8 +141,6 @@
 			name = mrkdown;
 			packageProductDependencies = (
 				B323D9612C61C9ED00EA8BDA /* Markdown */,
-				B39583B42C757B13002F47C5 /* Alamofire */,
-				B39583BD2C759371002F47C5 /* AlamofireNetworkActivityIndicator */,
 			);
 			productName = mrkdown;
 			productReference = B3D8277B2C5C562D00618E3F /* mrkdown.app */;
@@ -224,8 +173,6 @@
 			packageReferences = (
 				B323D9602C61C9ED00EA8BDA /* XCRemoteSwiftPackageReference "swift-markdown" */,
 				B30CB4902C687EFC000426D4 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
-				B39583B32C757B13002F47C5 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				B39583BC2C759371002F47C5 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */,
 			);
 			productRefGroup = B3D8277C2C5C562D00618E3F /* Products */;
 			projectDirPath = "";
@@ -277,19 +224,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B323D95B2C5F163B00EA8BDA /* MainView.swift in Sources */,
-				B37DED562C7CD302007605FA /* BlogSelectorView.swift in Sources */,
-				B38467572C75BA6A00AA29A4 /* CreatePost.swift in Sources */,
 				B3F1A1912C632A7D00DE8D5B /* NCMDSamples.swift in Sources */,
-				B361DEF82C684F08009D91E4 /* AboutView.swift in Sources */,
-				B39583BB2C7587D2002F47C5 /* GetQueryItem.swift in Sources */,
 				B3BB0B5C2C6B68F900FD4664 /* NCMDEditor.swift in Sources */,
-				B3CA0EEA2C5C64CA00891493 /* TokenExchange.swift in Sources */,
 				B3F1A18D2C63281900DE8D5B /* NCMDHeadingView.swift in Sources */,
 				B3D8277F2C5C562D00618E3F /* NCMDApp.swift in Sources */,
 				B324563D2C631DF300AE2C72 /* NCMDView.swift in Sources */,
-				B384675A2C75BBD400AA29A4 /* Meta.swift in Sources */,
 				B3F1A1932C6362E000DE8D5B /* NCMDParagraphView.swift in Sources */,
-				B3B9C0A02C6725B50069FD9E /* MainModel.swift in Sources */,
 				B323D9642C61D5A700EA8BDA /* PreviewPostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,22 +462,6 @@
 				version = 0.4.0;
 			};
 		};
-		B39583B32C757B13002F47C5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = exactVersion;
-				version = 5.9.1;
-			};
-		};
-		B39583BC2C759371002F47C5 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/AlamofireNetworkActivityIndicator.git";
-			requirement = {
-				kind = exactVersion;
-				version = 3.1.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -545,16 +469,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B323D9602C61C9ED00EA8BDA /* XCRemoteSwiftPackageReference "swift-markdown" */;
 			productName = Markdown;
-		};
-		B39583B42C757B13002F47C5 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B39583B32C757B13002F47C5 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		B39583BD2C759371002F47C5 /* AlamofireNetworkActivityIndicator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B39583BC2C759371002F47C5 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */;
-			productName = AlamofireNetworkActivityIndicator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
