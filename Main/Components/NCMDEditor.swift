@@ -38,24 +38,24 @@ struct NCMDEditor: UIViewRepresentable {
   }
 
   class Coordinator: NSObject, UITextViewDelegate {
-    var focused: Binding<Bool>
-    var text: Binding<String>
+    @Binding var focused: Bool
+    @Binding var text: String
 
     init(_ text: Binding<String>, _ focused: Binding<Bool>) {
-      self.text = text
-      self.focused = focused
+      self._text = text
+      self._focused = focused
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
-      focused.wrappedValue = true
+      focused = true
     }
 
     func textViewDidChange(_ textView: UITextView) {
-      text.wrappedValue = textView.text
+      text = textView.text
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
-      focused.wrappedValue = false
+      focused = false
     }
   }
 }
