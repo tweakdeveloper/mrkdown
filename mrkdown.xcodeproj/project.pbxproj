@@ -12,6 +12,9 @@
 		B30573052C81DACA000CE5A8 /* PreviewBackendClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30573042C81DACA000CE5A8 /* PreviewBackendClient.swift */; };
 		B30573082C81DD4F000CE5A8 /* GetQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30573072C81DD4F000CE5A8 /* GetQueryItem.swift */; };
 		B305730A2C81DE72000CE5A8 /* SignInError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30573092C81DE72000CE5A8 /* SignInError.swift */; };
+		B30573122C81F218000CE5A8 /* NCMDBackendClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30573112C81F218000CE5A8 /* NCMDBackendClientTests.swift */; };
+		B30573182C81F914000CE5A8 /* NCMDBackendClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30573022C81D8EB000CE5A8 /* NCMDBackendClient.swift */; };
+		B30573192C81F9AB000CE5A8 /* BackendClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30572FF2C81D653000CE5A8 /* BackendClient.swift */; };
 		B323D95B2C5F163B00EA8BDA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323D95A2C5F163B00EA8BDA /* MainView.swift */; };
 		B323D9622C61C9ED00EA8BDA /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = B323D9612C61C9ED00EA8BDA /* Markdown */; };
 		B323D9642C61D5A700EA8BDA /* PreviewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */; };
@@ -26,12 +29,24 @@
 		B3F1A1932C6362E000DE8D5B /* NCMDParagraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1A1922C6362E000DE8D5B /* NCMDParagraphView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B30573132C81F218000CE5A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3D827732C5C562D00618E3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3D8277A2C5C562D00618E3F;
+			remoteInfo = mrkdown;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		B30572FF2C81D653000CE5A8 /* BackendClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendClient.swift; sourceTree = "<group>"; };
 		B30573022C81D8EB000CE5A8 /* NCMDBackendClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDBackendClient.swift; sourceTree = "<group>"; };
 		B30573042C81DACA000CE5A8 /* PreviewBackendClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewBackendClient.swift; sourceTree = "<group>"; };
 		B30573072C81DD4F000CE5A8 /* GetQueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQueryItem.swift; sourceTree = "<group>"; };
 		B30573092C81DE72000CE5A8 /* SignInError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInError.swift; sourceTree = "<group>"; };
+		B305730F2C81F218000CE5A8 /* mrkdownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mrkdownTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30573112C81F218000CE5A8 /* NCMDBackendClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDBackendClientTests.swift; sourceTree = "<group>"; };
 		B323D95A2C5F163B00EA8BDA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B323D9632C61D5A700EA8BDA /* PreviewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPostView.swift; sourceTree = "<group>"; };
 		B324563C2C631DF300AE2C72 /* NCMDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDView.swift; sourceTree = "<group>"; };
@@ -51,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B305730C2C81F218000CE5A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3D827782C5C562D00618E3F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,6 +109,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		B30573102C81F218000CE5A8 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B30573112C81F218000CE5A8 /* NCMDBackendClientTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		B3CA0EE72C5C586700891493 /* Docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +134,7 @@
 			children = (
 				B3CA0EE72C5C586700891493 /* Docs */,
 				B3D8277D2C5C562D00618E3F /* Main */,
+				B30573102C81F218000CE5A8 /* Tests */,
 				B3D8277C2C5C562D00618E3F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				B3D8277B2C5C562D00618E3F /* mrkdown.app */,
+				B305730F2C81F218000CE5A8 /* mrkdownTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +196,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B305730E2C81F218000CE5A8 /* mrkdownTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B30573152C81F218000CE5A8 /* Build configuration list for PBXNativeTarget "mrkdownTests" */;
+			buildPhases = (
+				B305730B2C81F218000CE5A8 /* Sources */,
+				B305730C2C81F218000CE5A8 /* Frameworks */,
+				B305730D2C81F218000CE5A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B30573142C81F218000CE5A8 /* PBXTargetDependency */,
+			);
+			name = mrkdownTests;
+			productName = mrkdownTests;
+			productReference = B305730F2C81F218000CE5A8 /* mrkdownTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B3D8277A2C5C562D00618E3F /* mrkdown */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3D827892C5C563000618E3F /* Build configuration list for PBXNativeTarget "mrkdown" */;
@@ -192,9 +242,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					B305730E2C81F218000CE5A8 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = B3D8277A2C5C562D00618E3F;
+					};
 					B3D8277A2C5C562D00618E3F = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -218,11 +272,19 @@
 			projectRoot = "";
 			targets = (
 				B3D8277A2C5C562D00618E3F /* mrkdown */,
+				B305730E2C81F218000CE5A8 /* mrkdownTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B305730D2C81F218000CE5A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3D827792C5C562D00618E3F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,6 +320,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B305730B2C81F218000CE5A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30573192C81F9AB000CE5A8 /* BackendClient.swift in Sources */,
+				B30573122C81F218000CE5A8 /* NCMDBackendClientTests.swift in Sources */,
+				B30573182C81F914000CE5A8 /* NCMDBackendClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3D827772C5C562D00618E3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,7 +352,68 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B30573142C81F218000CE5A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3D8277A2C5C562D00618E3F /* mrkdown */;
+			targetProxy = B30573132C81F218000CE5A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B30573162C81F218000CE5A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z3C5WBU343;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.slottedspoon.mrkdownTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mrkdown.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mrkdown";
+			};
+			name = Debug;
+		};
+		B30573172C81F218000CE5A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z3C5WBU343;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.slottedspoon.mrkdownTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mrkdown.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mrkdown";
+			};
+			name = Release;
+		};
 		B3D827872C5C563000618E3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -469,6 +602,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B30573152C81F218000CE5A8 /* Build configuration list for PBXNativeTarget "mrkdownTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B30573162C81F218000CE5A8 /* Debug */,
+				B30573172C81F218000CE5A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B3D827762C5C562D00618E3F /* Build configuration list for PBXProject "mrkdown" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
