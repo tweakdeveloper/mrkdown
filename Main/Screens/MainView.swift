@@ -1,9 +1,54 @@
 import SwiftUI
 
+import AuthenticationServices
 import Combine
 
 struct MainView: View {
+  @Environment(\.webAuthenticationSession) private var webAuthenticationSession
+
+  @Environment(\.backendClient) private var backendClient
+
   @StateObject private var model = ViewModel()
+
+  private func performSignIn() {
+    let state = UUID().uuidString
+    let signInURL = NCMDBackendClient.buildSignInURL(withState: state)
+    Task {
+      do {
+        let urlWithCode = try await webAuthenticationSession.authenticate(
+          using: signInURL,
+          callbackURLScheme: "mrkdown",
+          preferredBrowserSession: .shared
+        )
+        guard let receivedState = urlWithCode.getQueryItem("state") else {
+          throw SignInError.stateNotFound
+        }
+        if receivedState != state {
+          throw SignInError.stateDidNotMatch(state, receivedState)
+        }
+        guard let code = urlWithCode.getQueryItem("code") else {
+          throw SignInError.codeNotFound
+        }
+        let accessToken = try await backendClient.exchangeCode(code)
+        model.setAccessToken(accessToken)
+      } catch let error as SignInError {
+        let baseMessage = "sign in error happened: "
+        switch error {
+        case .codeNotFound:
+          print(baseMessage + "code not found")
+        case .stateDidNotMatch(let expected, let actual):
+          print(
+            baseMessage +
+            "state did not match (expected \"\(expected)\", got \"\(actual))\""
+          )
+        case .stateNotFound:
+          print(baseMessage + "state not found")
+        }
+      } catch {
+        print("??? happened: \(error)")
+      }
+    }
+  }
 
   var body: some View {
     NavigationStack {
@@ -59,6 +104,7 @@ extension MainView {
     @Published var postText = "# howdy"
     @Published var shouldShowSubmitConfirmation = false
 
+    private var accessToken: String?
     private var hasBeenPreviewed = false
     private var postTextSubscriptionCancellable: Cancellable?
 
@@ -74,6 +120,10 @@ extension MainView {
 
     func focusEditor() {
       editorFocused = true
+    }
+
+    func setAccessToken(_ accessToken: String) {
+      self.accessToken = accessToken
     }
 
     func showPreview() {
@@ -97,4 +147,5 @@ extension MainView {
 
 #Preview("Main Screen") {
   MainView()
+    .environment(\.backendClient, PreviewBackendClient())
 }
