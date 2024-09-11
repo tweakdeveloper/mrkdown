@@ -9,7 +9,7 @@ jobs:
       - name: Checkout mrkdown
         uses: actions/checkout@v4
       - name: Run SwiftLint
-	run: |
+        run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew update
           brew install mint
