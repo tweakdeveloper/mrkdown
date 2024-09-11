@@ -60,6 +60,9 @@
 		B3D8277E2C5C562D00618E3F /* NCMDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDApp.swift; sourceTree = "<group>"; };
 		B3D827822C5C563000618E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3D827852C5C563000618E3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B3EFF2C42C913C82002F386C /* tinted.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = tinted.svg; sourceTree = "<group>"; };
+		B3EFF2C52C913C82002F386C /* light.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = light.svg; sourceTree = "<group>"; };
+		B3EFF2C62C913C82002F386C /* dark.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = dark.svg; sourceTree = "<group>"; };
 		B3F1A18C2C63281900DE8D5B /* NCMDHeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDHeadingView.swift; sourceTree = "<group>"; };
 		B3F1A1902C632A7D00DE8D5B /* NCMDSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDSamples.swift; sourceTree = "<group>"; };
 		B3F1A1922C6362E000DE8D5B /* NCMDParagraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDParagraphView.swift; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B3CA0EE72C5C586700891493 /* Docs */,
+				B3EFF2C32C913C02002F386C /* IconSources */,
 				B3D8277D2C5C562D00618E3F /* Main */,
 				B30573102C81F218000CE5A8 /* Tests */,
 				B3D8277C2C5C562D00618E3F /* Products */,
@@ -171,6 +175,16 @@
 				B3D827852C5C563000618E3F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B3EFF2C32C913C02002F386C /* IconSources */ = {
+			isa = PBXGroup;
+			children = (
+				B3EFF2C62C913C82002F386C /* dark.svg */,
+				B3EFF2C52C913C82002F386C /* light.svg */,
+				B3EFF2C42C913C82002F386C /* tinted.svg */,
+			);
+			path = IconSources;
 			sourceTree = "<group>";
 		};
 		B3F1A18A2C63278400DE8D5B /* Screens */ = {
