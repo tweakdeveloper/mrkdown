@@ -1,10 +1,10 @@
 name: ensure-linted
 run-name: Ensure SwiftLint Compliance
-on: [pull_request]
+on: push
 jobs:
   ensure-linted:
     name: Run Linter
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Install Mint
         run: |
