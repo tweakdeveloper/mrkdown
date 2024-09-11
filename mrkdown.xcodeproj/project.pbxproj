@@ -233,13 +233,13 @@
 			buildConfigurationList = B3D827892C5C563000618E3F /* Build configuration list for PBXNativeTarget "mrkdown" */;
 			buildPhases = (
 				B3D827772C5C562D00618E3F /* Sources */,
-				B30CB4912C687F03000426D4 /* Run SwiftLint */,
 				B3D827782C5C562D00618E3F /* Frameworks */,
 				B3D827792C5C562D00618E3F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B33F9FC32C914FD80043C058 /* PBXTargetDependency */,
 			);
 			name = mrkdown;
 			packageProductDependencies = (
@@ -311,28 +311,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B30CB4912C687F03000426D4 /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ $ENABLE_USER_SCRIPT_SANDBOXING = \"NO\" ]\nthen\n  SWIFT_PACKAGE_DIR=\"${BUILD_DIR%Build/*}SourcePackages/artifacts\"\n  SWIFTLINT_CMD=$(ls \"$SWIFT_PACKAGE_DIR\"/swiftlintplugins/SwiftLintBinary/SwiftLintBinary.artifactbundle/swiftlint-*/bin/swiftlint | head -n 1)\n\n  if test -f \"$SWIFTLINT_CMD\" 2>&1\n  then\n    \"$SWIFTLINT_CMD\"\n  else\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\n  fi\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		B305730B2C81F218000CE5A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -371,6 +349,10 @@
 			isa = PBXTargetDependency;
 			target = B3D8277A2C5C562D00618E3F /* mrkdown */;
 			targetProxy = B30573132C81F218000CE5A8 /* PBXContainerItemProxy */;
+		};
+		B33F9FC32C914FD80043C058 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = B33F9FC22C914FD80043C058 /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -554,7 +536,7 @@
 				DEVELOPMENT_ASSET_PATHS = "Main/Preview\\ Content";
 				DEVELOPMENT_TEAM = Z3C5WBU343;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -669,6 +651,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B323D9602C61C9ED00EA8BDA /* XCRemoteSwiftPackageReference "swift-markdown" */;
 			productName = Markdown;
+		};
+		B33F9FC22C914FD80043C058 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B30CB4902C687EFC000426D4 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
