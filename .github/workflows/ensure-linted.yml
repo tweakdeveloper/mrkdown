@@ -6,12 +6,11 @@ jobs:
     name: Run Linter
     runs-on: ubuntu-latest
     steps:
-      - name: Install Mint
-        run: |
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-          brew update
-          brew install mint
       - name: Checkout mrkdown
         uses: actions/checkout@v4
       - name: Run SwiftLint
-        run: mint run realm/SwiftLint@0.56.1
+	run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew update
+          brew install mint
+          mint run realm/SwiftLint@0.56.1
