@@ -21,6 +21,7 @@
 		B324563D2C631DF300AE2C72 /* NCMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B324563C2C631DF300AE2C72 /* NCMDView.swift */; };
 		B3B9C0A42C6741760069FD9E /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = B3B9C0A32C6741750069FD9E /* CONTRIBUTING.md */; };
 		B3BB0B5C2C6B68F900FD4664 /* NCMDEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB0B5B2C6B68F900FD4664 /* NCMDEditor.swift */; };
+		B3BEA0012C977905006C9690 /* NCMDMockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEA0002C9778FD006C9690 /* NCMDMockURLProtocol.swift */; };
 		B3D8277F2C5C562D00618E3F /* NCMDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D8277E2C5C562D00618E3F /* NCMDApp.swift */; };
 		B3D827832C5C563000618E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D827822C5C563000618E3F /* Assets.xcassets */; };
 		B3D827862C5C563000618E3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D827852C5C563000618E3F /* Preview Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		B3B9C0A22C6740BF0069FD9E /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		B3B9C0A32C6741750069FD9E /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		B3BB0B5B2C6B68F900FD4664 /* NCMDEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDEditor.swift; sourceTree = "<group>"; };
+		B3BEA0002C9778FD006C9690 /* NCMDMockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMDMockURLProtocol.swift; sourceTree = "<group>"; };
 		B3CA0EE32C5C578A00891493 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B3CA0EE52C5C57B900891493 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B3D8277B2C5C562D00618E3F /* mrkdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mrkdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 		B30573102C81F218000CE5A8 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				B3BEA0002C9778FD006C9690 /* NCMDMockURLProtocol.swift */,
 				B30573112C81F218000CE5A8 /* NCMDBackendClientTests.swift */,
 			);
 			path = Tests;
@@ -318,6 +321,7 @@
 			files = (
 				B30573192C81F9AB000CE5A8 /* BackendClient.swift in Sources */,
 				B30573122C81F218000CE5A8 /* NCMDBackendClientTests.swift in Sources */,
+				B3BEA0012C977905006C9690 /* NCMDMockURLProtocol.swift in Sources */,
 				B30573182C81F914000CE5A8 /* NCMDBackendClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
