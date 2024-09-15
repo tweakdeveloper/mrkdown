@@ -1,0 +1,20 @@
+name: Run XCTests
+on:
+  push:
+    paths:
+      - "**.swift"
+jobs:
+  run-xctests:
+    name: Run XCTests
+    runs-on: macos-latest
+    steps:
+      - name: Checkout mrkdown
+        uses: actions/checkout@v4
+      - name: Run XCTests
+        uses: mxcl/xcodebuild@v3
+        with:
+          xcode: 16.0
+          platform: iOS
+          platform-version: 18.0
+          workspace: mrkdown.xcodeproj/project.xcworkspace
+          scheme: mrkdown
