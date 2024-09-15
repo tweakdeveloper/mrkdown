@@ -6,7 +6,7 @@ jobs:
     name: Run Linter
     runs-on: ubuntu-latest
     container:
-      image: ghrc.io/realm/swiftlint:0.56.1
+      image: ghcr.io/realm/swiftlint:0.56.1
     steps:
       - name: Checkout mrkdown
         uses: actions/checkout@v4
