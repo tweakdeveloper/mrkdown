@@ -1,5 +1,4 @@
-name: ensure-linted
-run-name: Ensure SwiftLint Compliance
+name: Ensure SwiftLint Compliance
 on:
   push:
     paths:
