@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "**.swift"
+  workflow_dispatch:
 jobs:
   run-xctests:
     name: Run XCTests
