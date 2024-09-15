@@ -1,6 +1,9 @@
 name: ensure-linted
 run-name: Ensure SwiftLint Compliance
-on: push
+on:
+  push:
+    paths:
+      - "**.swift"
 jobs:
   ensure-linted:
     name: Run Linter
