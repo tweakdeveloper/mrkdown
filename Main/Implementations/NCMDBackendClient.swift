@@ -5,7 +5,11 @@ struct NCMDBackendClient: BackendClient {
 
   private let decoder = JSONDecoder()
   private let encoder = JSONEncoder()
-  private let session = URLSession.shared
+  private let session: URLSession
+
+  init(session: URLSession = URLSession.shared) {
+    self.session = session
+  }
 
   static func buildSignInURL(withState state: String) -> URL {
     var url = URL(string: "\(baseURL)/init_auth_flow")!
