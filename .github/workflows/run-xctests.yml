@@ -14,8 +14,8 @@ jobs:
       - name: Run XCTests
         uses: mxcl/xcodebuild@v3
         with:
-          xcode: 16.0
+          xcode: =16.0
           platform: iOS
-          platform-version: 18.0
+          platform-version: =18.0
           workspace: mrkdown.xcodeproj/project.xcworkspace
           scheme: mrkdown
