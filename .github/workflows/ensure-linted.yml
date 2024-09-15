@@ -5,12 +5,10 @@ jobs:
   ensure-linted:
     name: Run Linter
     runs-on: ubuntu-latest
+    container:
+      image: ghrc.io/realm/swiftlint:0.56.1
     steps:
       - name: Checkout mrkdown
         uses: actions/checkout@v4
       - name: Run SwiftLint
-        run: |
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-          brew update
-          brew install mint
-          mint run realm/SwiftLint@0.56.1
+        run: swiftlint
