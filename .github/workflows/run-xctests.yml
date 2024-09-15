@@ -12,10 +12,11 @@ jobs:
       - name: Checkout mrkdown
         uses: actions/checkout@v4
       - name: Run XCTests
-        uses: mxcl/xcodebuild@v3
+        uses: tweakdeveloper/xcodebuild@543c04b11376ef24d03b5de3c2640fd56b8f7a28
         with:
           xcode: =16.0
           platform: iOS
           platform-version: =18.0
           workspace: mrkdown.xcodeproj/project.xcworkspace
           scheme: mrkdown
+          trust-plugins: true
