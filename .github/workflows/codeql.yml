@@ -22,7 +22,10 @@ jobs:
         shell: bash
         run: |
           xcodebuild -workspace mrkdown.xcodeproj/project.xcworkspace \
-            -scheme mrkdown CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+            -scheme mrkdown \
+            -skipPackagePluginValidation \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:

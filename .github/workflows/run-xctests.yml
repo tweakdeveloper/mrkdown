@@ -12,7 +12,7 @@ jobs:
       - name: Checkout mrkdown
         uses: actions/checkout@v4
       - name: Run XCTests
-        uses: tweakdeveloper/xcodebuild@aa8060eec2b4e07752f628ecbf3cec35487b0ba7
+        uses: mxcl/xcodebuild@v3.3
         with:
           xcode: =16.0
           platform: iOS
