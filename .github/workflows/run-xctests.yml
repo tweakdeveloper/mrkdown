@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "**.swift"
+  pull_request:
   workflow_dispatch:
 jobs:
   run-xctests:

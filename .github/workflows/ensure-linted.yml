@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - "**.swift"
+  pull_request:
+  workflow_dispatch:
 jobs:
   ensure-linted:
     name: Run Linter
