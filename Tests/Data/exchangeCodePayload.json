@@ -1,0 +1,7 @@
+{
+  "access_token": "test_token",
+  "expires_in": 3600,
+  "token_type": "bearer",
+  "refresh_token": null,
+  "scope": "basic write"
+}
